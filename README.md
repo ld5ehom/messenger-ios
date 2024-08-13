@@ -1,13 +1,13 @@
 # Messenger iOS App
 
 ## Project Overview
-- Develop a messenger application for iOS that supports text and voice communication.
+- Develop a messenger application for iOS that supports text communication.
 - Utilized: Swift, SwiftUI, MVVM, Firebase
 
 
 ## Milestones
-- ** M1: Core Functionality Development** 
-- ** M2: Advanced Features and Testing** 
+- M1: Core Functionality Development
+- M2: Advanced Features and Testing
 
 -----
 
