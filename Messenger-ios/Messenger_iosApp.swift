@@ -2,16 +2,22 @@
 //  Messenger_iosApp.swift
 //  Messenger-ios
 //
-//  Created by TaeWook Park on 8/12/24.
-//
 
 import SwiftUI
 
 @main
 struct Messenger_iosApp: App {
+    // register app delegate for Firebase setup
+      @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
+    // Declared as a StateObject to inject the DIContainer into the environment.
+    @StateObject var container: DIContainer = .init(services: Services())
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            
+            // Invoke AuthenticatedView
+            AuthenticatedView(authViewModel: .init(container: container))
+                .environmentObject(container)
         }
     }
 }

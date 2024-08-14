@@ -1,7 +1,7 @@
 # Messenger iOS App
 
 ## Project Overview
-- Develop a messenger application for iOS that supports text communication.
+- Develop a messenger application for iOS that supports text and voice communication.
 - Utilized: Swift, SwiftUI, MVVM, Firebase
 
 
@@ -16,7 +16,7 @@
 
 **Task 1. Login View**
    - **Estimated Duration**: 3 days
-   - **Details** : Implement user authentication with secure login and registration features.
+   - **Details** : Implement user authentication with secure login and registration features using Firebase.
    - **Status** : In Progress
    - **Issues** : [task-1-login](https://github.com/ld5ehom/messenger-ios/tree/task-1-login)
    
