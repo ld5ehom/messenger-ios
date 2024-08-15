@@ -22,9 +22,9 @@
 
    
 **Task 2. Home View**
-   - **Issues** :
+   - **Issues** : [task-2-home](https://github.com/ld5ehom/messenger-ios/tree/task-2-home)
    - **Estimated Duration**: 3 days
-   - **Status** : Not Started
+   - **Status** : In Progress
    - **Details** : Design the main navigation screen where users can access all features.
 
    
