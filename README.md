@@ -15,56 +15,57 @@
 ### M1: Core Functionality Development
 
 **Task 1. Login View**
-   - **Estimated Duration**: 3 days
-   - **Details** : Implement user authentication with secure login and registration features using Firebase.
-   - **Status** : In Progress
    - **Issues** : [task-1-login](https://github.com/ld5ehom/messenger-ios/tree/task-1-login)
+   - **Estimated Duration**: 3 days
+   - **Status** : Completed (August 13–August 15, 2024)
+   - **Details** : Updated the login UI view and implemented user authentication with secure login, registration features, and logout functionality using Firebase, including Google and Apple sign-in.
+
    
 **Task 2. Home View**
+   - **Issues** :
    - **Estimated Duration**: 3 days
-   - **Details** : Design the main navigation screen where users can access all features.
    - **Status** : Not Started
+   - **Details** : Design the main navigation screen where users can access all features.
+
    
 
 **Task 3. Profile View**
    - **Estimated Duration** : 4 days
-   - **Details** : Allow users to edit and view their profile, including photo uploads.
    - **Status** : Not Started
+   - **Details** : Allow users to edit and view their profile, including photo uploads.
    
 
 **Task 4. Chat View**
    - **Estimated Duration** : 3 days
-   - **Details** : Develop the messaging interface for one-on-one and group chats.
    - **Status** : Not Started
+   - **Details** : Develop the messaging interface for one-on-one and group chats.
 
 
 **Task 5. Search View**
    - **Estimated Duration** : 2 day
-   - **Details** : Create a search interface for finding contacts and chat groups.
    - **Status** : Not Started
-
+   - **Details** : Create a search interface for finding contacts and chat groups.
 
 
 **Task 6. Settings View**
    - **Estimated Duration** : 2 day
-   - **Details** : Implement settings options for account management and app configurations.
    - **Status** : Not Started
-
+   - **Details** : Implement settings options for account management and app configurations.
 
 
 ### M2: Advanced Features and Testing
 
 **Task 7. Comprehensive Testing**
    - **Estimated Duration** : 2 days
-   - **Details** : Conduct thorough testing of all functionalities including unit tests and UI tests.
    - **Status** : Not Started
+   - **Details** : Conduct thorough testing of all functionalities including unit tests and UI tests.
 
 
 -----
 ## Progress Tracking
 
 - **Current Phase** : M1 Core Functionality Development
-- **Overall Progress** : Task 1 Start 
+- **Overall Progress** : Task 1 Completed 
 
 -----
 ## Getting Started

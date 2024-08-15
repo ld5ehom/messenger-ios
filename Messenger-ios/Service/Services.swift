@@ -28,7 +28,7 @@ class StubService: ServiceType {
     var authService: AuthenticationServiceType
     
     // Initializer to set authService
-    init(authService: AuthenticationServiceType = MockAuthenticationService()) {
+    init(authService: AuthenticationServiceType) {
         self.authService = authService
     }
 }
