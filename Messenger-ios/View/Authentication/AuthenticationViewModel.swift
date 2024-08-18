@@ -61,6 +61,12 @@ class AuthenticationViewModel: ObservableObject {
             isLoading = true
             
             container.services.authService.signInWithGoogle()
+            
+                // Task 2: Used flatMap to add the logged-in user to Firebase DB
+                .flatMap { user in
+                    self.container.services.userService.addUser(user)
+                }
+            
                 .sink { [weak self] completion in
                     if case .failure = completion {
                         self?.isLoading = false
@@ -80,6 +86,12 @@ class AuthenticationViewModel: ObservableObject {
                 guard let nonce = currentNonce else { return }
                 
                 container.services.authService.handleSignInWithAppleCompletion(authorization, none: nonce)
+                
+                    // Task 2: Used flatMap to add the logged-in user to Firebase DB
+                    .flatMap { user in
+                        self.container.services.userService.addUser(user)
+                    }
+                    
                     .sink { [weak self] completion in
                         if case .failure = completion {
                             self?.isLoading = false
@@ -90,7 +102,7 @@ class AuthenticationViewModel: ObservableObject {
                         self?.authenticationState = .authenticated
                     }.store(in: &subscriptions)
           
-                // failure case 
+                // fail case
             } else if case let .failure(error) = result {
                 isLoading = false
                 print(error.localizedDescription)

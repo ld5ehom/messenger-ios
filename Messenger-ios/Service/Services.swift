@@ -8,27 +8,31 @@
 import Foundation
 
 protocol ServiceType {
-    // Add AuthenticationService
+    // Task 1: Add AuthenticationService
     var authService: AuthenticationServiceType { get set }
+    
+    // Task 2: Firebase DB user service
+    var userService: UserServiceType { get set }
+    
+    // Task 2: Contact Framework
+    var contactService: ContactServiceType { get set }
     
 }
 
 class Services: ServiceType {
-    // Add AuthenticationService
     var authService: AuthenticationServiceType
+    var userService: UserServiceType
+    var contactService: ContactServiceType
     
-    
-    // Initializer to set Services
     init() {
         self.authService = AuthenticationService()
+        self.userService = UserService(dbRepository: UserDBRepository())
+        self.contactService = ContactService()
     }
 }
 
 class StubService: ServiceType {
-    var authService: AuthenticationServiceType
-    
-    // Initializer to set authService
-    init(authService: AuthenticationServiceType) {
-        self.authService = authService
-    }
+    var authService: AuthenticationServiceType = StubAuthenticationService()
+    var userService: UserServiceType = StubUserService()
+    var contactService: ContactServiceType = StubContactService()
 }
