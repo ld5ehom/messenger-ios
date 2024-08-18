@@ -2,6 +2,7 @@
 
 ## Project Overview
 - Develop a messenger application for iOS that supports text and voice communication.
+- Implemented Firebase integration for user authentication, including Google and Apple sign-up, login, and logout functionalities.
 - Utilized: Swift, SwiftUI, MVVM, Firebase
 
 
@@ -24,9 +25,11 @@
 **Task 2. Home View**
    - **Issues** : [task-2-home](https://github.com/ld5ehom/messenger-ios/tree/task-2-home)
    - **Estimated Duration**: 3 days
-   - **Status** : In Progress
-   - **Details** : Design the main navigation screen where users can access all features.
-
+   - **Status** : Completed (August 15–August 17, 2024)
+   - **Details**:  
+     - **Home UI and Phase**: Displays context-appropriate loading screens using Home UI and phase management.  
+     - **Firebase Integration**: Implements login and logout functionalities with Firebase Realtime Database.  
+     - **Contact Framework**: Integrates the Contact framework to enable friend-adding functionality.
    
 
 **Task 3. Profile View**
@@ -66,6 +69,10 @@
 
 - **Current Phase** : M1 Core Functionality Development
 - **Overall Progress** : Task 1 Completed 
+
+-----
+## Reference Site
+- Firebase Structure Data : https://firebase.google.com/docs/database/ios/structure-data?hl=en
 
 -----
 ## Getting Started

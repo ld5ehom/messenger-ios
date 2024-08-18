@@ -21,10 +21,14 @@ struct AuthenticatedView: View {
                     .environmentObject(authViewModel)
             case .authenticated:
                 MainTabView()
+                    .environmentObject(authViewModel)
             }
         }
         .onAppear {
              authViewModel.send(action: .checkAuthenticationState)
+            
+            // Calls the logout method to proceed with logging out
+//            authViewModel.send(action: .logout)
         }
     }
 }
@@ -33,5 +37,5 @@ struct AuthenticatedView: View {
 
 // Inject Preview serivce
 #Preview {
-    AuthenticatedView(authViewModel: .init(container: .init(services: StubService(authService: StubAuthenticationService()))))
+    AuthenticatedView(authViewModel: .init(container: .init(services: StubService())))
 }
