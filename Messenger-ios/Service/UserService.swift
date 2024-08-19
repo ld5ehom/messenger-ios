@@ -12,6 +12,8 @@ protocol UserServiceType {
     func addUser(_ user: User) -> AnyPublisher<User, ServiceError>
     func addUserAfterContact(users: [User]) -> AnyPublisher<Void, ServiceError>
     func getUser(userId: String) -> AnyPublisher<User, ServiceError>
+    func getUser(userId: String) async throws -> User
+    func updateDescription(userId: String, description: String) async throws
     func loadUsers(id: String) -> AnyPublisher<[User], ServiceError>
 }
 
@@ -50,6 +52,17 @@ class UserService: UserServiceType {
             .eraseToAnyPublisher()
     }
     
+    // MyProfileView firebase async user data (Task 3)
+    func getUser(userId: String) async throws -> User {
+        let userObject = try await dbRepository.getUser(userId: userId)
+        return userObject.toModel()
+    }
+    
+    // Updates the user's status description in Firebase (Task 3)
+    func updateDescription(userId: String, description: String) async throws {
+        try await dbRepository.updateUser(userId: userId, key: "description", value: description)
+    }
+    
     func loadUsers(id: String) -> AnyPublisher<[User], ServiceError> {
         dbRepository.loadUsers()
             .map { $0
@@ -74,6 +87,14 @@ class StubUserService: UserServiceType {
     func getUser(userId: String) -> AnyPublisher<User, ServiceError> {
         // Fetches the friend list for testing
         Just(.stub1).setFailureType(to: ServiceError.self).eraseToAnyPublisher()
+    }
+    
+    func getUser(userId: String) async throws -> User {
+        return .stub1
+    }
+    
+    func updateDescription(userId: String, description: String) async throws {
+            
     }
     
     func loadUsers(id: String) -> AnyPublisher<[User], ServiceError> {

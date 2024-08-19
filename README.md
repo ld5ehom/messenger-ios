@@ -33,10 +33,12 @@
    
 
 **Task 3. Profile View**
+   - **Issues** : [task-3-profile](https://github.com/ld5ehom/messenger-ios/tree/task-3-profile)
    - **Estimated Duration** : 4 days
-   - **Status** : Not Started
-   - **Details** : Allow users to edit and view their profile, including photo uploads.
-   
+   - **Status** : In progress
+   - **Details** : 
+     - **MyProfileView UI**: Implemented the UI and functionalities for the My Profile section.
+     - **MyProfileDeskView UI**: Created a user profile status view with functionality to update and sync the profile status with Firebase DB.
 
 **Task 4. Chat View**
    - **Estimated Duration** : 3 days
@@ -68,7 +70,7 @@
 ## Progress Tracking
 
 - **Current Phase** : M1 Core Functionality Development
-- **Overall Progress** : Task 1 Completed 
+- **Overall Progress** : Task 3 In Progress
 
 -----
 ## Reference Site

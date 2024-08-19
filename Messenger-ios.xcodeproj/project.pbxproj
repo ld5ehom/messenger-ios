@@ -50,6 +50,9 @@
 		ABAFF6BF2C708253003950F8 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFF6BE2C708253003950F8 /* MyProfileView.swift */; };
 		ABAFF6C12C708269003950F8 /* OtherProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFF6C02C708269003950F8 /* OtherProfileView.swift */; };
 		ABAFF6C32C7093DE003950F8 /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFF6C22C7093DE003950F8 /* ContactService.swift */; };
+		ABCC85922C7190C500E8C5A2 /* MyprofileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC85912C7190C500E8C5A2 /* MyprofileViewModel.swift */; };
+		ABCC85942C72B3F400E8C5A2 /* MyProfileMenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC85932C72B3F400E8C5A2 /* MyProfileMenuType.swift */; };
+		ABCC85962C72C2DD00E8C5A2 /* MyProfileDescEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC85952C72C2DD00E8C5A2 /* MyProfileDescEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +121,9 @@
 		ABAFF6BE2C708253003950F8 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		ABAFF6C02C708269003950F8 /* OtherProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileView.swift; sourceTree = "<group>"; };
 		ABAFF6C22C7093DE003950F8 /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
+		ABCC85912C7190C500E8C5A2 /* MyprofileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyprofileViewModel.swift; sourceTree = "<group>"; };
+		ABCC85932C72B3F400E8C5A2 /* MyProfileMenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileMenuType.swift; sourceTree = "<group>"; };
+		ABCC85952C72C2DD00E8C5A2 /* MyProfileDescEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDescEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +380,9 @@
 			children = (
 				ABAFF6BE2C708253003950F8 /* MyProfileView.swift */,
 				ABAFF6C02C708269003950F8 /* OtherProfileView.swift */,
+				ABCC85912C7190C500E8C5A2 /* MyprofileViewModel.swift */,
+				ABCC85932C72B3F400E8C5A2 /* MyProfileMenuType.swift */,
+				ABCC85952C72C2DD00E8C5A2 /* MyProfileDescEditView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -528,6 +537,7 @@
 				ABAAD5812C6DF90D002FF51A /* RandomNonceString.swift in Sources */,
 				ABA34EDD2C6C7B5B00DD3DC2 /* MainTabView.swift in Sources */,
 				ABA72B302C6EE62400CC5858 /* ChatListView.swift in Sources */,
+				ABCC85962C72C2DD00E8C5A2 /* MyProfileDescEditView.swift in Sources */,
 				ABAFF6B82C7079E8003950F8 /* LoadingView.swift in Sources */,
 				ABA7DFBC2C6B258B00AFED91 /* AuthenticatedView.swift in Sources */,
 				ABAFF6BF2C708253003950F8 /* MyProfileView.swift in Sources */,
@@ -547,8 +557,10 @@
 				ABA72B382C6F40F100CC5858 /* UserDBRepository.swift in Sources */,
 				ABAAD57B2C6D8309002FF51A /* ServiceError.swift in Sources */,
 				ABAAD5792C6D8225002FF51A /* User.swift in Sources */,
+				ABCC85922C7190C500E8C5A2 /* MyprofileViewModel.swift in Sources */,
 				ABAFF6BC2C707E2E003950F8 /* HomeModalDestination.swift in Sources */,
 				ABA34EE12C6C9EA300DD3DC2 /* LoginView.swift in Sources */,
+				ABCC85942C72B3F400E8C5A2 /* MyProfileMenuType.swift in Sources */,
 				ABA34EDB2C6C773600DD3DC2 /* LoginIntroView.swift in Sources */,
 				ABA72B3F2C6F48AB00CC5858 /* DBError.swift in Sources */,
 				ABA34EE32C6CA4F600DD3DC2 /* LoginButtonStyle.swift in Sources */,
