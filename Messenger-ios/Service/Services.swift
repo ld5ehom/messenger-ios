@@ -20,6 +20,9 @@ protocol ServiceType {
     // Task 3: PhotosUI Photo Picker Service - My profile image 
     var photoPickerService: PhotoPickerServiceType { get set }
     
+    // Task 3: Firebase DB upload provider
+    var uploadService: UploadServiceType { get set }
+    
 }
 
 class Services: ServiceType {
@@ -27,12 +30,14 @@ class Services: ServiceType {
     var userService: UserServiceType
     var contactService: ContactServiceType
     var photoPickerService: PhotoPickerServiceType
+    var uploadService: UploadServiceType
     
     init() {
         self.authService = AuthenticationService()
         self.userService = UserService(dbRepository: UserDBRepository())
         self.contactService = ContactService()
         self.photoPickerService = PhotoPickerService()
+        self.uploadService = UploadService(provider: UploadProvider())
     }
 }
 
@@ -41,4 +46,5 @@ class StubService: ServiceType {
     var userService: UserServiceType = StubUserService()
     var contactService: ContactServiceType = StubContactService()
     var photoPickerService: PhotoPickerServiceType = StubPhotoPickerService()
+    var uploadService: UploadServiceType = StubUploadService()
 }

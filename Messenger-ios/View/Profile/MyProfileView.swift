@@ -64,10 +64,23 @@ struct MyProfileView: View {
         // Added Photos Picker functionality for profile image (task 3)
         PhotosPicker(selection: $viewModel.imageSelection,
                      matching: .images) {
+            
+            // Test profile image using a local image file
+            /*
             Image("taewook")
                 .resizable()
                 .frame(width: 100, height: 100)
-                .clipShape(Circle())
+                .clipShape(Circle()) */
+            
+            // Displays the profile image using an async image view from a URL
+            AsyncImage(url: URL(string: viewModel.userInfo?.profileURL ?? "")) { image in
+                image.resizable()
+            } placeholder: {
+                Image("person")
+                    .resizable()
+            }
+            .frame(width: 80, height: 80)
+            .clipShape(Circle())
         }
     }
     
