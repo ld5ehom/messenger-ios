@@ -73,6 +73,7 @@ struct MyProfileView: View {
                 .clipShape(Circle()) */
             
             // Displays the profile image using an async image view from a URL
+            /*
             AsyncImage(url: URL(string: viewModel.userInfo?.profileURL ?? "")) { image in
                 image.resizable()
             } placeholder: {
@@ -80,7 +81,12 @@ struct MyProfileView: View {
                     .resizable()
             }
             .frame(width: 80, height: 80)
-            .clipShape(Circle())
+            .clipShape(Circle()) */
+            
+            // Task 3: Replaced with URL Image View
+            URLImageView(urlString: viewModel.userInfo?.profileURL)
+                .frame(width: 80, height: 80)
+                .clipShape(Circle())
         }
     }
     
