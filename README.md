@@ -30,7 +30,7 @@
      - **Home UI and Phase**: Displays context-appropriate loading screens using Home UI and phase management.  
      - **Firebase Integration**: Implements login and logout functionalities with Firebase Realtime Database.  
      - **Contact Framework**: Integrates the Contact framework to enable friend-adding functionality.
-   
+
 
 **Task 3. Profile View**
    - **Issues** : [task-3-profile](https://github.com/ld5ehom/messenger-ios/tree/task-3-profile)
@@ -40,7 +40,9 @@
      - **MyProfileView UI**: Implemented the UI and functionalities for the My Profile section.
      - **MyProfileDescView UI**: Created a user profile status view with functionality to update and sync the profile status with Firebase DB.
      - **MyProfile Image Update with PhotosUI**: Added functionality to update the profile image using a photo picker. Users can click on the profile image to select and update it.
-
+     - **Firebase Cloud Storage Integration**: Implemented functionality to upload the selected profile image to Firebase Cloud Storage.
+     - **Upload Provider Implementation**: Integrated an upload provider to manage data uploads to Firebase Storage.
+     - **Profile Image Display**: Implemented a feature to display the profile image using an asynchronous image view with a URL.
 
 
 **Task 4. Chat View**

@@ -55,6 +55,11 @@
 		ABCC85962C72C2DD00E8C5A2 /* MyProfileDescEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC85952C72C2DD00E8C5A2 /* MyProfileDescEditView.swift */; };
 		ABCC85982C72D56E00E8C5A2 /* PhotoPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC85972C72D56E00E8C5A2 /* PhotoPickerService.swift */; };
 		ABCC859B2C72D84F00E8C5A2 /* PhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC859A2C72D84F00E8C5A2 /* PhotoImage.swift */; };
+		ABCC859D2C72E26C00E8C5A2 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = ABCC859C2C72E26C00E8C5A2 /* FirebaseStorage */; };
+		ABCC859F2C72E26C00E8C5A2 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = ABCC859E2C72E26C00E8C5A2 /* FirebaseStorageCombine-Community */; };
+		ABCC85A32C72E56800E8C5A2 /* UploadProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC85A22C72E56800E8C5A2 /* UploadProvider.swift */; };
+		ABCC85A52C72E94A00E8C5A2 /* UploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC85A42C72E94A00E8C5A2 /* UploadService.swift */; };
+		ABCC85A82C72EB3D00E8C5A2 /* UploadSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC85A72C72EB3D00E8C5A2 /* UploadSourceType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +133,9 @@
 		ABCC85952C72C2DD00E8C5A2 /* MyProfileDescEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDescEditView.swift; sourceTree = "<group>"; };
 		ABCC85972C72D56E00E8C5A2 /* PhotoPickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerService.swift; sourceTree = "<group>"; };
 		ABCC859A2C72D84F00E8C5A2 /* PhotoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImage.swift; sourceTree = "<group>"; };
+		ABCC85A22C72E56800E8C5A2 /* UploadProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadProvider.swift; sourceTree = "<group>"; };
+		ABCC85A42C72E94A00E8C5A2 /* UploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadService.swift; sourceTree = "<group>"; };
+		ABCC85A72C72EB3D00E8C5A2 /* UploadSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSourceType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABA72B352C6F354E00CC5858 /* FirebaseDatabase in Frameworks */,
+				ABCC859D2C72E26C00E8C5A2 /* FirebaseStorage in Frameworks */,
+				ABCC859F2C72E26C00E8C5A2 /* FirebaseStorageCombine-Community in Frameworks */,
 				ABA4737E2C6C20D000C255E7 /* FirebaseAuth in Frameworks */,
 				ABAAD5762C6D7A8E002FF51A /* GoogleSignIn in Frameworks */,
 			);
@@ -256,6 +266,7 @@
 				ABAAD5772C6D7E57002FF51A /* Model */,
 				ABA7E02B2C6B582500AFED91 /* Service */,
 				ABA72B362C6F40CE00CC5858 /* Repository */,
+				ABCC85A02C72E4DC00E8C5A2 /* Provider */,
 				ABAAD57C2C6DF884002FF51A /* Util */,
 				ABA7DFEA2C6B44F900AFED91 /* Extension */,
 				ABA7DFE82C6B3F5900AFED91 /* Resource */,
@@ -321,6 +332,7 @@
 		ABA7E02B2C6B582500AFED91 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				ABCC85A62C72EB1900E8C5A2 /* Upload */,
 				ABCC85992C72D82A00E8C5A2 /* PhotoPicker */,
 				ABA7E02C2C6B585000AFED91 /* Services.swift */,
 				ABA473832C6C3C1300C255E7 /* AuthenticationService.swift */,
@@ -401,6 +413,31 @@
 			path = PhotoPicker;
 			sourceTree = "<group>";
 		};
+		ABCC85A02C72E4DC00E8C5A2 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				ABCC85A12C72E54E00E8C5A2 /* Upload */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		ABCC85A12C72E54E00E8C5A2 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				ABCC85A22C72E56800E8C5A2 /* UploadProvider.swift */,
+			);
+			path = Upload;
+			sourceTree = "<group>";
+		};
+		ABCC85A62C72EB1900E8C5A2 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				ABCC85A42C72E94A00E8C5A2 /* UploadService.swift */,
+				ABCC85A72C72EB3D00E8C5A2 /* UploadSourceType.swift */,
+			);
+			path = Upload;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -421,6 +458,8 @@
 				ABA4737D2C6C20D000C255E7 /* FirebaseAuth */,
 				ABAAD5752C6D7A8E002FF51A /* GoogleSignIn */,
 				ABA72B342C6F354E00CC5858 /* FirebaseDatabase */,
+				ABCC859C2C72E26C00E8C5A2 /* FirebaseStorage */,
+				ABCC859E2C72E26C00E8C5A2 /* FirebaseStorageCombine-Community */,
 			);
 			productName = "Messenger-ios";
 			productReference = ABA7DFB62C6B258B00AFED91 /* Messenger-ios.app */;
@@ -564,7 +603,9 @@
 				ABAFF6B12C700DDB003950F8 /* Constant.swift in Sources */,
 				ABAFF6B32C70744D003950F8 /* Phase.swift in Sources */,
 				ABAFF6C12C708269003950F8 /* OtherProfileView.swift in Sources */,
+				ABCC85A32C72E56800E8C5A2 /* UploadProvider.swift in Sources */,
 				ABA7DFBA2C6B258B00AFED91 /* Messenger_iosApp.swift in Sources */,
+				ABCC85A52C72E94A00E8C5A2 /* UploadService.swift in Sources */,
 				ABA473842C6C3C1300C255E7 /* AuthenticationService.swift in Sources */,
 				ABAAD57F2C6DF8D3002FF51A /* SHA256.swift in Sources */,
 				ABA72B2A2C6EE40400CC5858 /* MainTabType.swift in Sources */,
@@ -574,6 +615,7 @@
 				ABAAD5792C6D8225002FF51A /* User.swift in Sources */,
 				ABCC85982C72D56E00E8C5A2 /* PhotoPickerService.swift in Sources */,
 				ABCC85922C7190C500E8C5A2 /* MyprofileViewModel.swift in Sources */,
+				ABCC85A82C72EB3D00E8C5A2 /* UploadSourceType.swift in Sources */,
 				ABAFF6BC2C707E2E003950F8 /* HomeModalDestination.swift in Sources */,
 				ABA34EE12C6C9EA300DD3DC2 /* LoginView.swift in Sources */,
 				ABCC85942C72B3F400E8C5A2 /* MyProfileMenuType.swift in Sources */,
@@ -946,6 +988,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ABAAD5742C6D7A8E002FF51A /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
+		};
+		ABCC859C2C72E26C00E8C5A2 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABA4737C2C6C20D000C255E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		ABCC859E2C72E26C00E8C5A2 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABA4737C2C6C20D000C255E7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

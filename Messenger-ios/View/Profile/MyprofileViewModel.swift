@@ -58,11 +58,16 @@ class MyProfileViewModel: ObservableObject {
         guard let pickerItem else { return }
         
         do {
+            // Load image data from Photos Picker
             let data = try await container.services.photoPickerService.loadTransferable(from: pickerItem)
             
-            // TODO: storage upload
-            // TODO: DB update
+            // Upload the image to Firebase Storage
+            let url = try await container.services.uploadService.uploadImage(source: .profile(userId: userId), data: data)
+            
+            // Updates the profile image URL in Firebase Storage
+            try await container.services.userService.updateProfileURL(userId: userId, urlString: url.absoluteString)
 
+            userInfo?.profileURL = url.absoluteString
         } catch {
             print(error.localizedDescription)
         }
