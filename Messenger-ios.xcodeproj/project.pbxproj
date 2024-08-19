@@ -53,6 +53,8 @@
 		ABCC85922C7190C500E8C5A2 /* MyprofileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC85912C7190C500E8C5A2 /* MyprofileViewModel.swift */; };
 		ABCC85942C72B3F400E8C5A2 /* MyProfileMenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC85932C72B3F400E8C5A2 /* MyProfileMenuType.swift */; };
 		ABCC85962C72C2DD00E8C5A2 /* MyProfileDescEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC85952C72C2DD00E8C5A2 /* MyProfileDescEditView.swift */; };
+		ABCC85982C72D56E00E8C5A2 /* PhotoPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC85972C72D56E00E8C5A2 /* PhotoPickerService.swift */; };
+		ABCC859B2C72D84F00E8C5A2 /* PhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC859A2C72D84F00E8C5A2 /* PhotoImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +126,8 @@
 		ABCC85912C7190C500E8C5A2 /* MyprofileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyprofileViewModel.swift; sourceTree = "<group>"; };
 		ABCC85932C72B3F400E8C5A2 /* MyProfileMenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileMenuType.swift; sourceTree = "<group>"; };
 		ABCC85952C72C2DD00E8C5A2 /* MyProfileDescEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDescEditView.swift; sourceTree = "<group>"; };
+		ABCC85972C72D56E00E8C5A2 /* PhotoPickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerService.swift; sourceTree = "<group>"; };
+		ABCC859A2C72D84F00E8C5A2 /* PhotoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +321,7 @@
 		ABA7E02B2C6B582500AFED91 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				ABCC85992C72D82A00E8C5A2 /* PhotoPicker */,
 				ABA7E02C2C6B585000AFED91 /* Services.swift */,
 				ABA473832C6C3C1300C255E7 /* AuthenticationService.swift */,
 				ABAAD57A2C6D8309002FF51A /* ServiceError.swift */,
@@ -385,6 +390,15 @@
 				ABCC85952C72C2DD00E8C5A2 /* MyProfileDescEditView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		ABCC85992C72D82A00E8C5A2 /* PhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				ABCC85972C72D56E00E8C5A2 /* PhotoPickerService.swift */,
+				ABCC859A2C72D84F00E8C5A2 /* PhotoImage.swift */,
+			);
+			path = PhotoPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -543,6 +557,7 @@
 				ABAFF6BF2C708253003950F8 /* MyProfileView.swift in Sources */,
 				ABA72B2E2C6EE60E00CC5858 /* HomeView.swift in Sources */,
 				ABAFF6C32C7093DE003950F8 /* ContactService.swift in Sources */,
+				ABCC859B2C72D84F00E8C5A2 /* PhotoImage.swift in Sources */,
 				ABAFF6BA2C707AFE003950F8 /* ErrorView.swift in Sources */,
 				ABA7E02D2C6B585000AFED91 /* Services.swift in Sources */,
 				ABA7E02A2C6B574200AFED91 /* DIContainer.swift in Sources */,
@@ -557,6 +572,7 @@
 				ABA72B382C6F40F100CC5858 /* UserDBRepository.swift in Sources */,
 				ABAAD57B2C6D8309002FF51A /* ServiceError.swift in Sources */,
 				ABAAD5792C6D8225002FF51A /* User.swift in Sources */,
+				ABCC85982C72D56E00E8C5A2 /* PhotoPickerService.swift in Sources */,
 				ABCC85922C7190C500E8C5A2 /* MyprofileViewModel.swift in Sources */,
 				ABAFF6BC2C707E2E003950F8 /* HomeModalDestination.swift in Sources */,
 				ABA34EE12C6C9EA300DD3DC2 /* LoginView.swift in Sources */,

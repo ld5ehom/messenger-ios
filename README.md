@@ -38,7 +38,10 @@
    - **Status** : In progress
    - **Details** : 
      - **MyProfileView UI**: Implemented the UI and functionalities for the My Profile section.
-     - **MyProfileDeskView UI**: Created a user profile status view with functionality to update and sync the profile status with Firebase DB.
+     - **MyProfileDescView UI**: Created a user profile status view with functionality to update and sync the profile status with Firebase DB.
+     - **MyProfile Image Update with PhotosUI**: Added functionality to update the profile image using a photo picker. Users can click on the profile image to select and update it.
+
+
 
 **Task 4. Chat View**
    - **Estimated Duration** : 3 days
