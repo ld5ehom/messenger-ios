@@ -23,6 +23,8 @@ protocol ServiceType {
     // Task 3: Firebase DB upload provider
     var uploadService: UploadServiceType { get set }
     
+    // Task 3: Image Cache Service
+    var imageCacheService: ImageCacheServiceType { get set }
 }
 
 class Services: ServiceType {
@@ -31,6 +33,7 @@ class Services: ServiceType {
     var contactService: ContactServiceType
     var photoPickerService: PhotoPickerServiceType
     var uploadService: UploadServiceType
+    var imageCacheService: ImageCacheServiceType
     
     init() {
         self.authService = AuthenticationService()
@@ -38,6 +41,7 @@ class Services: ServiceType {
         self.contactService = ContactService()
         self.photoPickerService = PhotoPickerService()
         self.uploadService = UploadService(provider: UploadProvider())
+        self.imageCacheService = ImageCacheService(memoryStorage: MemoryStorage(), diskStorage: DiskStorage())
     }
 }
 
@@ -47,4 +51,5 @@ class StubService: ServiceType {
     var contactService: ContactServiceType = StubContactService()
     var photoPickerService: PhotoPickerServiceType = StubPhotoPickerService()
     var uploadService: UploadServiceType = StubUploadService()
+    var imageCacheService: ImageCacheServiceType = StubImageCacheService()
 }

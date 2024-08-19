@@ -43,7 +43,10 @@
      - **Firebase Cloud Storage Integration**: Implemented functionality to upload the selected profile image to Firebase Cloud Storage.
      - **Upload Provider Implementation**: Integrated an upload provider to manage data uploads to Firebase Storage.
      - **Profile Image Display**: Implemented a feature to display the profile image using an asynchronous image view with a URL.
+     - **Image Cache Service**: Developed an image cache service to manage memory efficiently.
+     - **URL Image View**: Created a view that replaces asynchronous images with cached images using the image cache service.
 
+ 
 
 **Task 4. Chat View**
    - **Estimated Duration** : 3 days
