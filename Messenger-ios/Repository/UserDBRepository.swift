@@ -19,6 +19,12 @@ protocol UserDBRepositoryType {
     // Retrieves user information from the database using the provided user ID and returns a UserObject
     func getUser(userId: String) -> AnyPublisher<UserObject, DBError>
     
+    // Task 3: MyProfileView. Retrieves user information asynchronously using async/await.
+    func getUser(userId: String) async throws -> UserObject
+    
+    // Updates the user data in Firebase DB
+    func updateUser(userId:String, key: String, value: Any) async throws
+
     // Retrieves all user information under the "Users" key and returns it as an array.
     func loadUsers() -> AnyPublisher<[UserObject], DBError>
     
@@ -94,6 +100,23 @@ class UserDBRepository: UserDBRepositoryType {
         }
         .eraseToAnyPublisher()
     }
+    
+    // Task 3: Uses Firebase's async support to fetch user data
+    func getUser(userId: String) async throws -> UserObject {
+        guard let value = try await self.db.child(DBKey.Users).child(userId).getData().value else {
+            throw DBError.emptyValue
+        }
+        
+        let data = try JSONSerialization.data(withJSONObject: value)
+        let userObject = try JSONDecoder().decode(UserObject.self, from: data)
+        return userObject
+    }
+    
+    // Updates the user data in Firebase DB
+    func updateUser(userId:String, key: String, value: Any) async throws {
+        try await self.db.child(DBKey.Users).child(userId).child(key).setValue(value)
+    }
+    
     
     // Fetches id, name, and profileURL from Firebase's database and returns them as an array of UserObject
     func loadUsers() -> AnyPublisher<[UserObject], DBError> {

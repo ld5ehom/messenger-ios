@@ -19,7 +19,8 @@ struct HomeView: View {
                 .fullScreenCover(item: $viewModel.modalDestination) {
                     switch $0 {
                     case .myProfile:
-                        MyProfileView()
+                        // Updates performed in Task 3 - Profile View
+                        MyProfileView(viewModel: .init(container: container, userId: viewModel.userId))
                     case let .otherProfile(userId):
                         OtherProfileView()
                     case .setting:
