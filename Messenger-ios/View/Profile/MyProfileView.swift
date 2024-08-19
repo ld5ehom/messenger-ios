@@ -7,6 +7,7 @@
 
 // Updates performed in Task 3 - Profile View
 import SwiftUI
+import PhotosUI
 
 struct MyProfileView: View {
 
@@ -60,10 +61,9 @@ struct MyProfileView: View {
     }
     
     var profileView: some View {
-        Button {
-            // MyProfileDescEditView
-            
-        } label: {
+        // Added Photos Picker functionality for profile image (task 3)
+        PhotosPicker(selection: $viewModel.imageSelection,
+                     matching: .images) {
             Image("taewook")
                 .resizable()
                 .frame(width: 100, height: 100)

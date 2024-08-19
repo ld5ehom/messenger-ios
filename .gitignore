@@ -2,7 +2,7 @@ Help.md
 .DS_Store
 xcuserdata/
 build/
-.idea
+.idea/
 
 Messenger-iosTests
 Messenger-iosUITests
