@@ -10,24 +10,43 @@ import SwiftUI
 // Task 2 Home view
 struct HomeView: View {
     @EnvironmentObject var container: DIContainer
+    
+    // Task 3: OtherProfileView Navigation Router
+    @EnvironmentObject var navigationRouter: NavigationRouter
     @StateObject var viewModel: HomeViewModel
     
     var body: some View {
-        NavigationStack {
+        // Task 3: Using the navigation router to manage the navigation path in OtherProfileView
+        NavigationStack(path: $navigationRouter.destinations) {
             contentView
             // modal destination
                 .fullScreenCover(item: $viewModel.modalDestination) {
                     switch $0 {
                     case .myProfile:
-                        // Updates performed in Task 3 - Profile View
+                        // Updates performed in Task 3 - My Profile View
                         MyProfileView(viewModel: .init(container: container, userId: viewModel.userId))
                     case let .otherProfile(userId):
-                        OtherProfileView()
+                        // Updates performed in Task 3 - Other(friend) Profile View
+                        OtherProfileView(viewModel: .init(container: container, userId: userId)) { otherUserInfo in
+                            viewModel.send(action: .goToChat(otherUserInfo))
+                        }
                     case .setting:
                         ErrorView()
 //                        SettingView(viewModel: .init())
                     }
                 }
+                /**
+                 Task 3:OtherProfileView/ Adds a destination modifier to manage the views that are pushed onto the navigation stack
+                 */
+                .navigationDestination(for: NavigationDestination.self) {
+                    switch $0 {
+                    case .chat:
+                        ChatView()
+                    case .search:
+                        SearchView()
+                    }
+                }
+            
         }
     }
     
@@ -143,22 +162,28 @@ struct HomeView: View {
       Search Button bar view
      */
     var searchButton: some View {
-        ZStack {
-            Rectangle()
-                .foregroundColor(.clear)
-                .frame(height: 36)
-                .background(Color.lightestBlue)
-                .cornerRadius(5)
-            
-            HStack {
-                Text("Search")
-                    .font(.system(size: 12))
-                    .foregroundColor(.uclaBlue)
-                Spacer()
+        /**
+         Task 3: OtherProfileView
+         Navigates to the Search view when the search button is tapped in OtherProfileView
+         */
+        NavigationLink(value: NavigationDestination.search) {
+            ZStack {
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(height: 36)
+                    .background(Color.lightestBlue)
+                    .cornerRadius(5)
+                
+                HStack {
+                    Text("Search")
+                        .font(.system(size: 12))
+                        .foregroundColor(.uclaBlue)
+                    Spacer()
+                }
+                .padding(.leading, 22)
             }
-            .padding(.leading, 22)
+            .padding(.horizontal, 30)
         }
-        .padding(.horizontal, 30)
     }
     
     /**
@@ -192,7 +217,26 @@ struct HomeView: View {
     }
 }
 
+//#Preview {
+//    // Initialize the DIContainer and NavigationRouter instances
+//    let container = DIContainer(services: StubService())
+//    let navigationRouter = NavigationRouter()
+//    
+//    // Create the HomeView with the view model
+//    HomeView(viewModel: HomeViewModel(container: container, navigationRouter: navigationRouter, userId: "user1_id"))
+//        .environmentObject(container)
+//        .environmentObject(navigationRouter)
+//}
 
-#Preview {
-    HomeView(viewModel: .init(container: .init(services: StubService()), userId: "user1_id"))
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        // Initialize DIContainer and NavigationRouter instances
+        let container = DIContainer(services: StubService())
+        let navigationRouter = NavigationRouter()
+        
+        // Create the HomeView with the view model
+        HomeView(viewModel: HomeViewModel(container: container, navigationRouter: navigationRouter, userId: "user1_id"))
+            .environmentObject(container)
+            .environmentObject(navigationRouter)
+    }
 }

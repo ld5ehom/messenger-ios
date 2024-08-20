@@ -10,6 +10,11 @@ import SwiftUI
 struct AuthenticatedView: View {
     @StateObject var authViewModel: AuthenticationViewModel
     
+    /**
+     Task 3: OtherProfileView/Added a NavigationRouter to inject into the MainTabView
+     */
+    @StateObject var navigationRouter: NavigationRouter
+    
     /*
      * Display either the login view or main tab view based on the authentication state
      */
@@ -22,20 +27,19 @@ struct AuthenticatedView: View {
             case .authenticated:
                 MainTabView()
                     .environmentObject(authViewModel)
+                    .environmentObject(navigationRouter)
             }
         }
         .onAppear {
              authViewModel.send(action: .checkAuthenticationState)
             
-            // Calls the logout method to proceed with logging out
-//            authViewModel.send(action: .logout)
+        // Calls the logout method to proceed with logging out
+
         }
     }
 }
 
-
-
-// Inject Preview serivce
 #Preview {
-    AuthenticatedView(authViewModel: .init(container: .init(services: StubService())))
+    AuthenticatedView(authViewModel: .init(container: .init(services: StubService())),
+                      navigationRouter: .init())
 }

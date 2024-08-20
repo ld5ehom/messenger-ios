@@ -16,6 +16,7 @@ class HomeViewModel: ObservableObject {
         case requestContacts // contact service
         case presentMyProfileView
         case presentOtherProfileView(String) // Includes associated value for passing friend user ID
+        case goToChat(User)
     }
 
     // profileView user information
@@ -34,11 +35,14 @@ class HomeViewModel: ObservableObject {
     var userId: String
     
     private var container: DIContainer
+    private var navigationRouter: NavigationRouter
     private var subscriptions = Set<AnyCancellable>()
     
     // UserService Firebase getUser data
-    init(container: DIContainer, userId: String) {
+    // Task 3: Added navigation functionality to link to the Search view.
+    init(container: DIContainer, navigationRouter: NavigationRouter ,userId: String) {
         self.container = container
+        self.navigationRouter = navigationRouter
         self.userId = userId
     }
     
@@ -91,6 +95,20 @@ class HomeViewModel: ObservableObject {
             
         case let .presentOtherProfileView(userId):
             modalDestination = .otherProfile(userId)
+            
+            
+        // Task 3: Other(Friend) profile view (ChatRoomService)
+        case let .goToChat(otherUser):
+            
+            // Checks if a chat room exists -> Creates one if it doesn't
+            // ChatRooms/myUserId/otherUserId
+            container.services.chatRoomService.createChatRoomIfNeeded(myUserId: userId, otherUserId: otherUser.id, otherUserName: otherUser.name)
+                .sink { completion in
+                    
+                } receiveValue: { [weak self] chatRoom in
+                    // Chat View navigation
+                    self?.navigationRouter.push(to: .chat)
+                }.store(in: &subscriptions)
             
         }
     }
