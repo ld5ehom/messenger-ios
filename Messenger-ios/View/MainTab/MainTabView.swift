@@ -24,7 +24,7 @@ struct MainTabView: View {
                         // Task 3: Using the navigation router to manage the navigation path in OtherProfileView
                         HomeView(viewModel: .init(container: container, navigationRouter: navigationRouter , userId: authViewModel.userId ?? ""))
                     case .chat:
-                        ChatListView()
+                        ChatListView(viewModel: .init(container: container, userId: authViewModel.userId ?? ""))
                     case .phone:
                         Text("Taewook Park")
                     }

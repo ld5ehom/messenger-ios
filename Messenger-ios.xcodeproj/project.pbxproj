@@ -52,6 +52,8 @@
 		ABAC97DA2C74622A00AAA41E /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC97D92C74622A00AAA41E /* ChatView.swift */; };
 		ABAC97DC2C74623D00AAA41E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC97DB2C74623D00AAA41E /* SearchView.swift */; };
 		ABAC97DE2C749AE800AAA41E /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC97DD2C749AE800AAA41E /* ChatListViewModel.swift */; };
+		ABAC97E02C74A0A100AAA41E /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC97DF2C74A0A100AAA41E /* SearchButton.swift */; };
+		ABAC97E22C74A68E00AAA41E /* NavigationRoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC97E12C74A68E00AAA41E /* NavigationRoutingView.swift */; };
 		ABAFF6B12C700DDB003950F8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFF6B02C700DDB003950F8 /* Constant.swift */; };
 		ABAFF6B32C70744D003950F8 /* Phase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFF6B22C70744D003950F8 /* Phase.swift */; };
 		ABAFF6B62C707929003950F8 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFF6B52C707929003950F8 /* PlaceholderView.swift */; };
@@ -146,6 +148,8 @@
 		ABAC97D92C74622A00AAA41E /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		ABAC97DB2C74623D00AAA41E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		ABAC97DD2C749AE800AAA41E /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
+		ABAC97DF2C74A0A100AAA41E /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
+		ABAC97E12C74A68E00AAA41E /* NavigationRoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoutingView.swift; sourceTree = "<group>"; };
 		ABAFF6B02C700DDB003950F8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		ABAFF6B22C70744D003950F8 /* Phase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phase.swift; sourceTree = "<group>"; };
 		ABAFF6B52C707929003950F8 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
@@ -449,6 +453,7 @@
 			children = (
 				ABAC97D32C743CF500AAA41E /* NavigationDestination.swift */,
 				ABAC97D52C743DFD00AAA41E /* NavigationRouter.swift */,
+				ABAC97E12C74A68E00AAA41E /* NavigationRoutingView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -476,6 +481,7 @@
 				ABAFF6B52C707929003950F8 /* PlaceholderView.swift */,
 				ABAFF6B72C7079E8003950F8 /* LoadingView.swift */,
 				ABAFF6B92C707AFE003950F8 /* ErrorView.swift */,
+				ABAC97DF2C74A0A100AAA41E /* SearchButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -706,6 +712,7 @@
 				ABCC85B42C73459A00E8C5A2 /* URLImageViewModel.swift in Sources */,
 				ABAC97DE2C749AE800AAA41E /* ChatListViewModel.swift in Sources */,
 				ABA72B2E2C6EE60E00CC5858 /* HomeView.swift in Sources */,
+				ABAC97E02C74A0A100AAA41E /* SearchButton.swift in Sources */,
 				ABCC85AF2C73329B00E8C5A2 /* DiskStorage.swift in Sources */,
 				ABAFF6C32C7093DE003950F8 /* ContactService.swift in Sources */,
 				ABCC859B2C72D84F00E8C5A2 /* PhotoImage.swift in Sources */,
@@ -734,6 +741,7 @@
 				ABAC97CF2C7426C400AAA41E /* ChatRoomService.swift in Sources */,
 				ABCC85A82C72EB3D00E8C5A2 /* UploadSourceType.swift in Sources */,
 				ABAFF6BC2C707E2E003950F8 /* HomeModalDestination.swift in Sources */,
+				ABAC97E22C74A68E00AAA41E /* NavigationRoutingView.swift in Sources */,
 				ABAC97CD2C741EF400AAA41E /* ChatRoomObject.swift in Sources */,
 				ABCC85AD2C73315600E8C5A2 /* MemoryStorage.swift in Sources */,
 				ABA34EE12C6C9EA300DD3DC2 /* LoginView.swift in Sources */,

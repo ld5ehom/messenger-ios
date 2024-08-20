@@ -39,12 +39,7 @@ struct HomeView: View {
                  Task 3:OtherProfileView/ Adds a destination modifier to manage the views that are pushed onto the navigation stack
                  */
                 .navigationDestination(for: NavigationDestination.self) {
-                    switch $0 {
-                    case .chat:
-                        ChatView()
-                    case .search:
-                        SearchView()
-                    }
+                    NavigationRoutingView(destination: $0)
                 }
             
         }
@@ -87,8 +82,10 @@ struct HomeView: View {
             profileView
                 .padding(.bottom, 30)
             
-            searchButton
-                .padding(.bottom, 20)
+            NavigationLink(value: NavigationDestination.search) {
+                SearchButton()
+            }
+            .padding(.bottom, 20)
             
             HStack {
                 Text("Friends")
@@ -158,33 +155,6 @@ struct HomeView: View {
         }
     }
     
-    /**
-      Search Button bar view
-     */
-    var searchButton: some View {
-        /**
-         Task 3: OtherProfileView
-         Navigates to the Search view when the search button is tapped in OtherProfileView
-         */
-        NavigationLink(value: NavigationDestination.search) {
-            ZStack {
-                Rectangle()
-                    .foregroundColor(.clear)
-                    .frame(height: 36)
-                    .background(Color.lightestBlue)
-                    .cornerRadius(5)
-                
-                HStack {
-                    Text("Search")
-                        .font(.system(size: 12))
-                        .foregroundColor(.uclaBlue)
-                    Spacer()
-                }
-                .padding(.leading, 22)
-            }
-            .padding(.horizontal, 30)
-        }
-    }
     
     /**
         View displayed when the user has no friends
