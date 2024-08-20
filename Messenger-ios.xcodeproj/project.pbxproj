@@ -51,6 +51,7 @@
 		ABAC97D62C743DFD00AAA41E /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC97D52C743DFD00AAA41E /* NavigationRouter.swift */; };
 		ABAC97DA2C74622A00AAA41E /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC97D92C74622A00AAA41E /* ChatView.swift */; };
 		ABAC97DC2C74623D00AAA41E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC97DB2C74623D00AAA41E /* SearchView.swift */; };
+		ABAC97DE2C749AE800AAA41E /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC97DD2C749AE800AAA41E /* ChatListViewModel.swift */; };
 		ABAFF6B12C700DDB003950F8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFF6B02C700DDB003950F8 /* Constant.swift */; };
 		ABAFF6B32C70744D003950F8 /* Phase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFF6B22C70744D003950F8 /* Phase.swift */; };
 		ABAFF6B62C707929003950F8 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAFF6B52C707929003950F8 /* PlaceholderView.swift */; };
@@ -144,6 +145,7 @@
 		ABAC97D52C743DFD00AAA41E /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		ABAC97D92C74622A00AAA41E /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		ABAC97DB2C74623D00AAA41E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		ABAC97DD2C749AE800AAA41E /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 		ABAFF6B02C700DDB003950F8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		ABAFF6B22C70744D003950F8 /* Phase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phase.swift; sourceTree = "<group>"; };
 		ABAFF6B52C707929003950F8 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA72B2F2C6EE62400CC5858 /* ChatListView.swift */,
+				ABAC97DD2C749AE800AAA41E /* ChatListViewModel.swift */,
 			);
 			path = ChatList;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				ABCC85AA2C732FF100E8C5A2 /* ImageCacheService.swift in Sources */,
 				ABAFF6BF2C708253003950F8 /* MyProfileView.swift in Sources */,
 				ABCC85B42C73459A00E8C5A2 /* URLImageViewModel.swift in Sources */,
+				ABAC97DE2C749AE800AAA41E /* ChatListViewModel.swift in Sources */,
 				ABA72B2E2C6EE60E00CC5858 /* HomeView.swift in Sources */,
 				ABCC85AF2C73329B00E8C5A2 /* DiskStorage.swift in Sources */,
 				ABAFF6C32C7093DE003950F8 /* ContactService.swift in Sources */,
