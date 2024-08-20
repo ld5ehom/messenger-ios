@@ -11,6 +11,7 @@ import SwiftUI
 struct MainTabView: View {
     @EnvironmentObject var authViewModel: AuthenticationViewModel
     @EnvironmentObject var container: DIContainer
+    @EnvironmentObject var navigationRouter: NavigationRouter
     @State private var selectedTab: MainTabType = .home
     
     var body: some View {
@@ -20,7 +21,8 @@ struct MainTabView: View {
                     switch tab {
                     case .home:
                         // Injects the user ID
-                        HomeView(viewModel: .init(container: container, userId: authViewModel.userId ?? ""))
+                        // Task 3: Using the navigation router to manage the navigation path in OtherProfileView
+                        HomeView(viewModel: .init(container: container, navigationRouter: navigationRouter , userId: authViewModel.userId ?? ""))
                     case .chat:
                         ChatListView()
                     case .phone:
@@ -37,7 +39,6 @@ struct MainTabView: View {
                 .tabItem {
                     Label(tab.title, systemImage: tab.imageName(selected: selectedTab == tab))
                 }
-                
                 .tag(tab)
             }
         }
@@ -52,24 +53,29 @@ struct MainTabView: View {
 }
 
 //#Preview {
-//    let authService = StubAuthenticationService()
-//    let container = DIContainer(services: StubService(authService: authService))
-//    
+//    // Initialize DIContainer and NavigationRouter instances
+//    let container = DIContainer(services: StubService())
+//    let navigationRouter = NavigationRouter()
+//    let authViewModel = AuthenticationViewModel(container: container)
+//
+//    // Create and return the MainTabView with the environment objects
 //    MainTabView()
 //        .environmentObject(container)
-//        .environmentObject(AuthenticationViewModel(container: container))
+//        .environmentObject(authViewModel)
+//        .environmentObject(navigationRouter)
 //}
 
-//struct MainTabView_Previews: PreviewProvider {
-//    static let container: DIContainer = .stub
-//    
-//    static var previews: some View {
-//        MainTabView()
-//            .environmentObject(Self.container)
-//            .environmentObject(AuthenticationViewModel(container: Self.container))
-//    }
-//}
+struct MainTabView_Previews: PreviewProvider {
+    static var previews: some View {
+        // Initialize DIContainer, NavigationRouter, and AuthenticationViewModel instances
+        let container = DIContainer(services: StubService())
+        let navigationRouter = NavigationRouter()
+        let authViewModel = AuthenticationViewModel(container: container)
 
-#Preview {
-    MainTabView()
+        // Create and return the MainTabView with the environment objects
+        MainTabView()
+            .environmentObject(container)
+            .environmentObject(authViewModel)
+            .environmentObject(navigationRouter)
+    }
 }

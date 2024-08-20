@@ -16,7 +16,8 @@ struct Messenger_iosApp: App {
         WindowGroup {
             
             // Invoke AuthenticatedView
-            AuthenticatedView(authViewModel: .init(container: container))
+            AuthenticatedView(authViewModel: .init(container: container),
+                              navigationRouter: .init()) // Task 3. OtherProfileView
                 .environmentObject(container)
         }
     }

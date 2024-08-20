@@ -35,7 +35,7 @@
 **Task 3. Profile View**
    - **Issues** : [task-3-profile](https://github.com/ld5ehom/messenger-ios/tree/task-3-profile)
    - **Estimated Duration** : 4 days
-   - **Status** : In progress
+   - **Status** : In Progress 
    - **Details** : 
      - **MyProfileView UI**: Implemented the UI and functionalities for the My Profile section.
      - **MyProfileDescView UI**: Created a user profile status view with functionality to update and sync the profile status with Firebase DB.
@@ -45,7 +45,9 @@
      - **Profile Image Display**: Implemented a feature to display the profile image using an asynchronous image view with a URL.
      - **Image Cache Service**: Developed an image cache service to manage memory efficiently.
      - **URL Image View**: Created a view that replaces asynchronous images with cached images using the image cache service.
-
+     - **Other Profile View**: Developed the user interface and functionalities for viewing other users' profiles. Added features for initiating chats with other users.
+     - **Navigation Management**: Created an enum for common navigation paths across the app. Developed a navigation router to manage these paths, using NavigationLink and NavigationDestination to handle navigation between views.
+     - **Chat and Search UI**: Designed the basic structure for the chat user interface (UI) and search UI.
  
 
 **Task 4. Chat View**
