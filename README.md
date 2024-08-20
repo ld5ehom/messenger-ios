@@ -49,6 +49,7 @@
      - **Navigation Management**: Created an enum for common navigation paths across the app. Developed a navigation router to manage these paths, using NavigationLink and NavigationDestination to handle navigation between views.
      - **Chat and Search UI**: Designed the basic structure for the chat user interface (UI) and search UI.
  
+ 
 
 **Task 4. Chat View**
    - **Estimated Duration** : 3 days
