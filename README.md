@@ -45,10 +45,10 @@
      - **Profile Image Display (commit 0d27e8d)**: Implemented a feature to display the profile image using an asynchronous image view with a URL.
      - **Image Cache Service (commit 51a7644)**: Developed an image cache service to manage memory efficiently.
      - **URL Image View (commit 51a7644)**: Created a view that replaces asynchronous images with cached images using the image cache service.
-     - **Task-3-profile/commit bc9b04d details**
-         - **Navigation Management**: Created an enum for common navigation paths across the app. Developed a navigation router to manage these paths, using NavigationLink and NavigationDestination to handle navigation between views.     
-         - **Other Profile View**: Developed the user interface and functionalities for viewing other users' profiles. Added features for initiating chats with other users.
-         - **Chat and Search UI**: Designed the basic structure for the chat user interface (UI) and search UI.
+     - **Task-3-profile (commit bc9b04d) details**
+         - **Navigation Management (commit bc9b04d)**: Created an enum for common navigation paths across the app. Developed a navigation router to manage these paths, using NavigationLink and NavigationDestination to handle navigation between views.     
+         - **Other Profile View (commit bc9b04d)**: Developed the user interface and functionalities for viewing other users' profiles. Added features for initiating chats with other users.
+         - **Chat and Search UI (commit bc9b04d)**: Designed the basic structure for the chat user interface (UI) and search UI.
      - **Chat List UI Implementation (commit 0f17277)**: Integrated the search button with the chat list UI into a unified view and reused the UI by utilizing navigation.
 
 
@@ -57,11 +57,13 @@
    - **Estimated Duration** : 3 days
    - **Status** : In Progress
    - **Details** : 
-     - **Chat Room UI**: The chat interface is organized into sections by date, with each section header displaying the chat date. Messages within each section are grouped accordingly.
-     - **Chat Item VIew**: Differentiated the color and position of messages to distinguish between the user's and the recipient's messages.    
-     - **Text Field**: Implemented a text field for message input, along with an input view that includes an image picker for attaching photos.
-     - **Date Extension**: Added methods for converting Date objects to and from formatted strings, optimized for use in chat applications.
-     - **Keyboard Toolbar**: A view modifier that adds a customizable toolbar above the keyboard, facilitating additional actions within the chat interface.
+     - **Chat Room UI (commit cf4f234)**: The chat interface is organized into sections by date, with each section header displaying the chat date. Messages within each section are grouped accordingly.
+     - **Chat Item VIew (commit cf4f234)**: Differentiated the color and position of messages to distinguish between the user's and the recipient's messages.    
+     - **Text Field (commit cf4f234)**: Implemented a text field for message input, along with an input view that includes an image picker for attaching photos.
+     - **Date Extension (commit cf4f234)**: Added methods for converting Date objects to and from formatted strings, optimized for use in chat applications.
+     - **Keyboard Toolbar (commit cf4f234)**: A view modifier that adds a customizable toolbar above the keyboard, facilitating additional actions within the chat interface.
+     - **Real-Time Chat Updates**: Implemented real-time updates for chat messages using Firebase Realtime Database, ensuring that changes in the chat message storage path are immediately reflected in the view.
+
 
 
 **Task 5. Search View**
@@ -93,6 +95,7 @@
 -----
 ## Reference Site
 - Firebase Structure Data : https://firebase.google.com/docs/database/ios/structure-data?hl=en
+- Firebase Database Reference : https://firebase.google.com/docs/database/ios/lists-of-data?hl=en
 
 -----
 ## Getting Started

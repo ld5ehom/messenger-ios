@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 /**
  Task 4: Chat View UI
@@ -25,6 +26,9 @@ struct ChatView: View {
                 } else {
                     contentView
                 }
+            }
+            .onChange(of: viewModel.chatDataList.last?.chats) { newValue in
+                proxy.scrollTo(newValue?.last?.id, anchor: .bottom)
             }
         }
         .background(Color.lightestBlue)
@@ -65,6 +69,11 @@ struct ChatView: View {
                     Image(systemName: "ellipsis.circle") // "other_add"
                         .accessibilityLabel(Text("More"))
                 }
+                PhotosPicker(selection: $viewModel.imageSelection,
+                             matching: .images) {
+                    Image(systemName: "photo")
+                        .labelStyle(IconOnlyLabelStyle()) // Use an icon-only label style
+                }
 
 
                 // Photo Camera Button
@@ -91,7 +100,7 @@ struct ChatView: View {
                     Image(systemName: "paperplane.fill") // "send"
                         .accessibilityLabel(Text("Send"))
                 }
-                .disabled(viewModel.message.isEmpty)
+                .disabled(viewModel.message.isEmpty)  // Empty 
             }
             .padding(.horizontal, 27)
         }
@@ -102,18 +111,30 @@ struct ChatView: View {
     
     // Scroll Content View (ChatRoom Message)
     var contentView: some View {
-        ForEach(viewModel.chatDataList) { chatData in
-            Section {
-                ForEach(chatData.chats) { chat in
-                    ChatItemView(message: chat.message ?? "",
-                                 direcion: viewModel.getDirection(id: chat.userId),
-                                 date: chat.date)
+            ForEach(viewModel.chatDataList) { chatData in
+                Section {
+                    ForEach(chatData.chats) { chat in
+                        if let message = chat.message {
+                            ChatItemView(message: message,
+                                         direcion: viewModel.getDirection(id: chat.userId),
+                                         date: chat.date)
+                            .id(chat.chatId)
+                            .accessibilityElement(children: .combine)
+                        } else if let photoURL = chat.photoURL {
+                            ChatImageItemView(urlString: photoURL,
+                                              direction: viewModel.getDirection(id: chat.userId),
+                                              date: chat.date)
+                            .id(chat.chatId)
+                            .accessibilityElement(children: .combine)
+                            .accessibility(addTraits: .isImage)
+                        }
+                        
+                    }
+                } header: {
+                    headerView(dateStr: chatData.dateStr)
                 }
-            } header: {
-                headerView(dateStr: chatData.dateStr)
             }
         }
-    }
 
     // Creates a header view with the provided date string.
     func headerView(dateStr: String) -> some View {
