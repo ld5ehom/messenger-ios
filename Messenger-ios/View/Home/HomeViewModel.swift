@@ -107,7 +107,15 @@ class HomeViewModel: ObservableObject {
                     
                 } receiveValue: { [weak self] chatRoom in
                     // Chat View navigation
-                    self?.navigationRouter.push(to: .chat)
+                    // Safely unwrapping self using guard to ensure self is still available
+                    guard let `self` = self else {
+                        return
+                    }
+                    
+                    // Task 4: Adds navigation to the chat view with the necessary parameters
+                    self.navigationRouter.push(to: .chat(chatRoomId: chatRoom.chatRoomId,
+                                                          myUserId: self.userId,
+                                                          otherUserId: otherUser.id))
                 }.store(in: &subscriptions)
             
         }

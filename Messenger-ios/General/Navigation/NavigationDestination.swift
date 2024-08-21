@@ -11,6 +11,6 @@ import Foundation
   Task 3: Other(Friend) view navigation
  */
 enum NavigationDestination: Hashable {
-    case chat
+    case chat(chatRoomId: String, myUserId: String, otherUserId: String)
     case search
 }
