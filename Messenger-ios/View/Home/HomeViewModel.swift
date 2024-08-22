@@ -14,8 +14,9 @@ class HomeViewModel: ObservableObject {
     enum Action {
         case load
         case requestContacts // contact service
-        case presentMyProfileView
-        case presentOtherProfileView(String) // Includes associated value for passing friend user ID
+        case presentView(HomeModalDestination)
+//        case presentMyProfileView
+//        case presentOtherProfileView(String) // Includes associated value for passing friend user ID
         case goToChat(User)
     }
 
@@ -23,7 +24,6 @@ class HomeViewModel: ObservableObject {
     @Published var myUser: User?
     
     // HomeView Friend list
-//    @Published var users: [User] = [.stub1, .stub2] // Dummy data[.stub1, .stub2]
     @Published var users: [User] = []
     
     // General loading phase
@@ -90,11 +90,14 @@ class HomeViewModel: ObservableObject {
                 }
                 .store(in: &subscriptions)
             
-        case .presentMyProfileView:
-            modalDestination = .myProfile
+//        case .presentMyProfileView:
+//            modalDestination = .myProfile
             
-        case let .presentOtherProfileView(userId):
-            modalDestination = .otherProfile(userId)
+//        case let .presentOtherProfileView(userId):
+//            modalDestination = .otherProfile(userId)
+            
+        case let .presentView(destination):
+            modalDestination = destination
             
             
         // Task 3: Other(Friend) profile view (ChatRoomService)

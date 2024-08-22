@@ -20,6 +20,11 @@ struct AuthenticatedView: View {
      */
     @StateObject var searchDataController: SearchDataController
     
+    /**
+     Task 6: Setting view appearance controller
+     */
+    @StateObject var appearanceController: AppearanceController
+    
     /*
      * Display either the login view or main tab view based on the authentication state
      */
@@ -34,20 +39,22 @@ struct AuthenticatedView: View {
                     .environment(\.managedObjectContext, searchDataController.persistantContainer.viewContext)
                     .environmentObject(authViewModel)
                     .environmentObject(navigationRouter)
+                    .environmentObject(appearanceController)
             }
         }
         .onAppear {
              authViewModel.send(action: .checkAuthenticationState)
             
-        // Calls the logout method to proceed with logging out
-
         }
+        // Task 6: Setting View
+        .preferredColorScheme(appearanceController.appearance.colorScheme)
     }
 }
 
 #Preview {
     AuthenticatedView(authViewModel: .init(container: .init(services: StubService())),
                       navigationRouter: .init(),
-                      searchDataController: .init())
-                    
+                      searchDataController: .init(),
+                      appearanceController: .init(0))
+
 }

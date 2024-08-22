@@ -1,9 +1,11 @@
 # Messenger iOS App
 
 ## Project Overview
-- Develop a messenger application for iOS that supports text and voice communication.
-- Implemented Firebase integration for user authentication, including Google and Apple sign-up, login, and logout functionalities.
-- Utilized: Swift, SwiftUI, MVVM, Firebase
+- Developed a messenger app for iOS, implementing user authentication with Firebase, including secure login, registration, and logout functionalities.
+- Designed and built profile management features, including profile image updates using PhotosUI and real-time synchronization with Firebase Cloud Storage.
+- Created a chat interface with real-time message updates, message grouping by date, and customizable UI settings for light/dark mode.
+- Integrated Core Data to manage recent search terms and user preferences, ensuring a seamless and personalized user experience.
+- Utilized: Swift, SwiftUI, UIKit, MVVM, CoreData, Firebase
 
 
 ## Milestones
@@ -72,14 +74,15 @@
    - **Details** : 
      - **SearchBar Integration (commit c5dd76e)**: Integrated UISearchBar(UIKit) into SwiftUI for search functionality
      - **Recent Searches Section (commit c5dd76e)**: Implemented a feature to store and manage recent search terms using Core Data, allowing users to view their recent searches.
-     - **CoreData**: Implemented recent search functionality using Core Data. This includes creating a new SearchResult entity, setting its properties (ID, name, date) and saving it to CoreData.
+     - **CoreData (commit cd61615)**: Implemented recent search functionality using Core Data. This includes creating a new SearchResult entity, setting its properties (ID, name, date) and saving it to CoreData.
 
 
 **Task 6. Settings View**
+   - **Issues** : [task-6-setting](https://github.com/ld5ehom/messenger-ios/tree/task-6-setting)
    - **Estimated Duration** : 2 day
-   - **Status** : Not Started
-   - **Details** : Implement settings options for account management and app configurations.
-
+   - **Status** : Completed (August 22, 2024)
+   - **Details** : 
+     - **User Interface Style **: Implemented functionality to toggle between light and dark modes. The selected style is saved to UserDefaults and applied across different views within the app.
 
 ### M2: Advanced Features and Testing
 
@@ -92,8 +95,8 @@
 -----
 ## Progress Tracking
 
-- **Current Phase** : M1 Core Functionality Development
-- **Overall Progress** : Task 6 In Progress
+- **Current Phase** : M1 Core Functionality Development - Completed 
+- **Overall Progress** : Task 7 : Not Started
 
 -----
 ## Reference Site
