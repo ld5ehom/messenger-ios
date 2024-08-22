@@ -82,7 +82,7 @@
    - **Estimated Duration** : 2 day
    - **Status** : Completed (August 22, 2024)
    - **Details** : 
-     - **User Interface Style **: Implemented functionality to toggle between light and dark modes. The selected style is saved to UserDefaults and applied across different views within the app.
+     - **User Interface Style (commit 5d1915a)**: Implemented functionality to toggle between light and dark modes. The selected style is saved to UserDefaults and applied across different views within the app.
 
 ### M2: Advanced Features and Testing
 
