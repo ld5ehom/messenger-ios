@@ -16,6 +16,7 @@ protocol UserServiceType {
     func updateDescription(userId: String, description: String) async throws
     func updateProfileURL(userId: String, urlString: String) async throws
     func loadUsers(id: String) -> AnyPublisher<[User], ServiceError>
+    func filterUsers(with queryString: String, userId: String) -> AnyPublisher<[User], ServiceError>
 }
 
 /**
@@ -78,6 +79,20 @@ class UserService: UserServiceType {
             .mapError { .error($0) }
             .eraseToAnyPublisher()
     }
+    
+    /**
+     Task 5: Filters users based on the provided query string and excludes the user with the given userId.
+     */
+    func filterUsers(with queryString: String, userId: String) -> AnyPublisher<[User], ServiceError> {
+        dbRepository.filterUsers(with: queryString)
+            .map { $0
+                .map { $0.toModel() }
+                .filter { $0.id != userId }
+            }
+            .mapError { .error($0) }
+            .eraseToAnyPublisher()
+    }
+    
 }
 
 class StubUserService: UserServiceType {
@@ -109,6 +124,10 @@ class StubUserService: UserServiceType {
     
     func loadUsers(id: String) -> AnyPublisher<[User], ServiceError> {
         // Fetches the friend list for testing
+        Just([.stub1, .stub2]).setFailureType(to: ServiceError.self).eraseToAnyPublisher()
+    }
+    
+    func filterUsers(with queryString: String, userId: String) -> AnyPublisher<[User], ServiceError> {
         Just([.stub1, .stub2]).setFailureType(to: ServiceError.self).eraseToAnyPublisher()
     }
 }
