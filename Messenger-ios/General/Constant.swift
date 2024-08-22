@@ -8,7 +8,7 @@
 // Task 2 Constant
 import Foundation
 
-// Constant.DBKey.Users
+// Constant.DBKey.Users and Setting Appearance 
 typealias DBKey = Constant.DBKey
 typealias AppStorageType = Constant.AppStorage
 

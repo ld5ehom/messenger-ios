@@ -10,9 +10,7 @@ import SwiftUI
 // Task 2 Home view
 struct HomeView: View {
     @EnvironmentObject var container: DIContainer
-    
-    // Task 3: OtherProfileView Navigation Router
-    @EnvironmentObject var navigationRouter: NavigationRouter
+    @EnvironmentObject var navigationRouter: NavigationRouter // Task 3: OtherProfileView
     @StateObject var viewModel: HomeViewModel
     
     var body: some View {
@@ -31,8 +29,8 @@ struct HomeView: View {
                             viewModel.send(action: .goToChat(otherUserInfo))
                         }
                     case .setting:
-                        ErrorView()
-//                        SettingView(viewModel: .init())
+                        // Task 6: Setting View build
+                        SettingView(viewModel: .init())
                     }
                 }
                 /**
@@ -104,7 +102,7 @@ struct HomeView: View {
                 LazyVStack {
                     ForEach(viewModel.users, id: \.id) { user in
                         Button {
-                            viewModel.send(action: .presentOtherProfileView(user.id))
+                            viewModel.send(action: .presentView(.otherProfile(user.id)))
                         } label: {
                             HStack(spacing: 8) {
                                 // friends profile image
@@ -151,7 +149,7 @@ struct HomeView: View {
         }
         .padding(.horizontal, 30)
         .onTapGesture {
-            viewModel.send(action: .presentMyProfileView)
+            viewModel.send(action: .presentView(.myProfile))
         }
     }
     

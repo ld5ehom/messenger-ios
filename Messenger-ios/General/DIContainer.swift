@@ -8,11 +8,12 @@
 import Foundation
 
 class DIContainer: ObservableObject {
-    
-    // service property 
+
+    // Service property
     var services: ServiceType
     
     init(services: ServiceType) {
         self.services = services
     }
 }
+
