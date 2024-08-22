@@ -15,6 +15,11 @@ struct AuthenticatedView: View {
      */
     @StateObject var navigationRouter: NavigationRouter
     
+    /**
+     Task 5: Search Core data
+     */
+    @StateObject var searchDataController: SearchDataController
+    
     /*
      * Display either the login view or main tab view based on the authentication state
      */
@@ -26,6 +31,7 @@ struct AuthenticatedView: View {
                     .environmentObject(authViewModel)
             case .authenticated:
                 MainTabView()
+                    .environment(\.managedObjectContext, searchDataController.persistantContainer.viewContext)
                     .environmentObject(authViewModel)
                     .environmentObject(navigationRouter)
             }
@@ -41,5 +47,7 @@ struct AuthenticatedView: View {
 
 #Preview {
     AuthenticatedView(authViewModel: .init(container: .init(services: StubService())),
-                      navigationRouter: .init())
+                      navigationRouter: .init(),
+                      searchDataController: .init())
+                    
 }

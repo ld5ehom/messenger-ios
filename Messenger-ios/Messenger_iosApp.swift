@@ -17,7 +17,8 @@ struct Messenger_iosApp: App {
             
             // Invoke AuthenticatedView
             AuthenticatedView(authViewModel: .init(container: container),
-                              navigationRouter: .init()) // Task 3. OtherProfileView
+                              navigationRouter: .init(), // Task 3. OtherProfileView
+                              searchDataController: .init())
                 .environmentObject(container)
         }
     }

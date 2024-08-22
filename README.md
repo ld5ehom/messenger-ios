@@ -68,11 +68,11 @@
 **Task 5. Search View**
    - **Issues** : [task-5-search](https://github.com/ld5ehom/messenger-ios/tree/task-5-search)
    - **Estimated Duration** : 2 day
-   - **Status** : In Progress
+   - **Status** : Completed (August 21–August 22, 2024)
    - **Details** : 
-     - **SearchBar Integration**: Integrated UISearchBar(UIKit) into SwiftUI for search functionality
-     - **Recent Searches Section**: Implemented a feature to store and manage recent search terms using Core Data, allowing users to view their recent searches.
-
+     - **SearchBar Integration (commit c5dd76e)**: Integrated UISearchBar(UIKit) into SwiftUI for search functionality
+     - **Recent Searches Section (commit c5dd76e)**: Implemented a feature to store and manage recent search terms using Core Data, allowing users to view their recent searches.
+     - **CoreData**: Implemented recent search functionality using Core Data. This includes creating a new SearchResult entity, setting its properties (ID, name, date) and saving it to CoreData.
 
 
 **Task 6. Settings View**
@@ -93,7 +93,7 @@
 ## Progress Tracking
 
 - **Current Phase** : M1 Core Functionality Development
-- **Overall Progress** : Task 5 In Progress
+- **Overall Progress** : Task 6 In Progress
 
 -----
 ## Reference Site

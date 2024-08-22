@@ -14,6 +14,7 @@ struct SearchBar: UIViewRepresentable {
     @Binding var text: String
     @Binding var shouldBecomeFirstResponder: Bool
     
+    // closer
     var onClickedSearchButton: (() -> Void)?
     
     init(text: Binding<String>,
@@ -103,5 +104,9 @@ extension SearchBar {
             searchBar.text = text
         }
 
+        // closer
+        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            onClickedSearchButton?()
+        }
     }
 }
