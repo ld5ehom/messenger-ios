@@ -55,21 +55,24 @@
 **Task 4. Chat View**
    - **Issues** : [task-4-chat](https://github.com/ld5ehom/messenger-ios/tree/task-4-chat)
    - **Estimated Duration** : 3 days
-   - **Status** : In Progress
+   - **Status** : Completed (August 20–August 21, 2024)
    - **Details** : 
      - **Chat Room UI (commit cf4f234)**: The chat interface is organized into sections by date, with each section header displaying the chat date. Messages within each section are grouped accordingly.
      - **Chat Item VIew (commit cf4f234)**: Differentiated the color and position of messages to distinguish between the user's and the recipient's messages.    
      - **Text Field (commit cf4f234)**: Implemented a text field for message input, along with an input view that includes an image picker for attaching photos.
      - **Date Extension (commit cf4f234)**: Added methods for converting Date objects to and from formatted strings, optimized for use in chat applications.
      - **Keyboard Toolbar (commit cf4f234)**: A view modifier that adds a customizable toolbar above the keyboard, facilitating additional actions within the chat interface.
-     - **Real-Time Chat Updates**: Implemented real-time updates for chat messages using Firebase Realtime Database, ensuring that changes in the chat message storage path are immediately reflected in the view.
-
+     - **Real-Time Chat Updates (commit eec6591)**: Implemented real-time updates for chat messages using Firebase Realtime Database, ensuring that changes in the chat message storage path are immediately reflected in the view.
 
 
 **Task 5. Search View**
+   - **Issues** : [task-5-search](https://github.com/ld5ehom/messenger-ios/tree/task-5-search)
    - **Estimated Duration** : 2 day
-   - **Status** : Not Started
-   - **Details** : Create a search interface for finding contacts and chat groups.
+   - **Status** : In Progress
+   - **Details** : 
+     - **SearchBar Integration**: Integrated UISearchBar(UIKit) into SwiftUI for search functionality
+     - **Recent Searches Section**: Implemented a feature to store and manage recent search terms using Core Data, allowing users to view their recent searches.
+
 
 
 **Task 6. Settings View**
@@ -90,7 +93,7 @@
 ## Progress Tracking
 
 - **Current Phase** : M1 Core Functionality Development
-- **Overall Progress** : Task 4 In Progress
+- **Overall Progress** : Task 5 In Progress
 
 -----
 ## Reference Site

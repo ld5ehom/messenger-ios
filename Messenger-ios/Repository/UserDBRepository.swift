@@ -31,6 +31,8 @@ protocol UserDBRepositoryType {
     // Contacts service (add friend list)
     func addUserAfterContact(users: [UserObject]) -> AnyPublisher<Void, DBError>
     
+    // Task 5: Search View
+    func filterUsers(with queryString: String) -> AnyPublisher<[UserObject], DBError>
 }
 
 class UserDBRepository: UserDBRepositoryType {
@@ -208,6 +210,37 @@ class UserDBRepository: UserDBRepositoryType {
             .mapError { .error($0) }
             .eraseToAnyPublisher()
     }
+    
+    /**
+     Task 5:Filters users in the database based on the provided query string, retrieving user objects that match the criteria.
+     */
+    func filterUsers(with queryString: String) -> AnyPublisher<[UserObject], DBError> {
+        Future { [weak self] promise in
+            self?.db.child(DBKey.Users)
+                .queryOrdered(byChild: "name")
+                .queryStarting(atValue: queryString)
+                .queryEnding(atValue: queryString + "\u{f8ff}")
+                .observeSingleEvent(of: .value) { snapshot in
+                    promise(.success(snapshot.value))
+                }
+        } // [String : [String : Any]
+        .flatMap { value in
+            if let dic = value as? [String: [String: Any]] {
+                return Just(dic)
+                    .tryMap { try JSONSerialization.data(withJSONObject: $0) }
+                    .decode(type: [String: UserObject].self, decoder: JSONDecoder())
+                    .map { $0.values.map { $0 as UserObject} }
+                    .mapError { DBError.error($0) }
+                    .eraseToAnyPublisher()
+            } else if value == nil {
+                return Just([]).setFailureType(to: DBError.self).eraseToAnyPublisher()
+            } else {
+                return Fail(error: .invalidatedType).eraseToAnyPublisher()
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+    
 }
 
 

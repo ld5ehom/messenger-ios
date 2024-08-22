@@ -11,10 +11,17 @@ import Combine
 /**
   Task 3: Other(Friend) view navigation
  */
+protocol NavigationRoutable {
+    var destinations: [NavigationDestination] { get set }
+    
+    func push(to view: NavigationDestination)
+    func pop()
+    func popToRootView()
+}
 
 class NavigationRouter: ObservableObject {
     
-//    var objectWillChange: ObservableObjectPublisher?
+    var objectWillChange: ObservableObjectPublisher?
     
     // Published property to manage the navigation stack for the HomeView
     @Published var destinations: [NavigationDestination] = []
