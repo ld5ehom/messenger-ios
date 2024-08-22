@@ -86,10 +86,9 @@
 
 ### M2: Advanced Features and Testing
 
-**Task 7. Comprehensive Testing**
-   - **Estimated Duration** : 2 days
-   - **Status** : Not Started
-   - **Details** : Conduct thorough testing of all functionalities including unit tests and UI tests.
+**Task 7. Comprehensive Testing and Debugging**
+   - **Issues** : [task-7-test](https://github.com/ld5ehom/messenger-ios/tree/task-7-test)
+   - **Details** : Conduct thorough testing of all functionalities, including unit tests and UI tests. Perform debugging to resolve any issues identified during testing to ensure a stable and reliable application.
 
 
 -----
