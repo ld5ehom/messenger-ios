@@ -82,14 +82,13 @@
    - **Estimated Duration** : 2 day
    - **Status** : Completed (August 22, 2024)
    - **Details** : 
-     - **User Interface Style **: Implemented functionality to toggle between light and dark modes. The selected style is saved to UserDefaults and applied across different views within the app.
+     - **User Interface Style (commit 5d1915a)**: Implemented functionality to toggle between light and dark modes. The selected style is saved to UserDefaults and applied across different views within the app.
 
 ### M2: Advanced Features and Testing
 
-**Task 7. Comprehensive Testing**
-   - **Estimated Duration** : 2 days
-   - **Status** : Not Started
-   - **Details** : Conduct thorough testing of all functionalities including unit tests and UI tests.
+**Task 7. Comprehensive Testing and Debugging**
+   - **Issues** : [task-7-test](https://github.com/ld5ehom/messenger-ios/tree/task-7-test)
+   - **Details** : Conduct thorough testing of all functionalities, including unit tests and UI tests. Perform debugging to resolve any issues identified during testing to ensure a stable and reliable application.
 
 
 -----
