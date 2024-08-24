@@ -88,14 +88,18 @@
 
 **Task 7. Comprehensive Testing and Debugging**
    - **Issues** : [task-7-test](https://github.com/ld5ehom/messenger-ios/tree/task-7-test)
-   - **Details** : Conduct thorough testing of all functionalities, including unit tests and UI tests. Perform debugging to resolve any issues identified during testing to ensure a stable and reliable application.
-
-
+   - **Details** : 
+     - **Unit Testing**: Conducted unit tests for the repository, service, and view model layers to verify their accuracy.  
+     - **DIContainer Refactoring**: Refactored NavigationRouter, SearchDataController, and AppearanceController into the DIContainer to centralize dependency management.
+     - **UserDBRepository Layer**: Created a protocol to abstract communication with Firebase and refactored the repository to conform to this protocol.
+     - **Google Sign-In Test Error**: Encountered errors with the Google Sign-In library during testing. The issue was resolved by removing the library.
+     
+     
+     
 -----
 ## Progress Tracking
 
-- **Current Phase** : M1 Core Functionality Development - Completed 
-- **Overall Progress** : Task 7 : Not Started
+- **Overall Progress** : M2 Comprehensive Testing and Debugging - In Progress 
 
 -----
 ## Reference Site
@@ -104,8 +108,13 @@
 
 -----
 ## Getting Started
-To contribute to this project, please follow the setup instructions:
-```angular2html
-1. Clone the repository: `git clone https://github.com/ld5ehom/messenger-ios.git`
-2. Install all dependencies: `pod install`
+### Install 
+
+**Homebrew** : 
 ```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+**Clone the repository** : 
+```
+git clone https://github.com/ld5ehom/messenger-ios.git
+``` 

@@ -19,12 +19,18 @@ protocol NavigationRoutable {
     func popToRootView()
 }
 
-class NavigationRouter: ObservableObject {
+class NavigationRouter: NavigationRoutable, ObservableObjectSettable {
+    
     
     var objectWillChange: ObservableObjectPublisher?
     
     // Published property to manage the navigation stack for the HomeView
-    @Published var destinations: [NavigationDestination] = []
+//    @Published var destinations: [NavigationDestination] = []
+    var destinations: [NavigationDestination] = [] {
+        didSet {
+            objectWillChange?.send()
+        }
+    }
     
     // Adds a new view to the navigation stack
     func push(to view: NavigationDestination) {
@@ -40,4 +46,5 @@ class NavigationRouter: ObservableObject {
     func popToRootView() {
         destinations = []
     }
+
 }

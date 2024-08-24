@@ -142,5 +142,5 @@ struct MyProfileView: View {
 }
 
 #Preview {
-    MyProfileView(viewModel: .init(container: DIContainer(services: StubService()), userId: "user1_id"))
+    MyProfileView(viewModel: .init(container: .stub, userId: "user1_id"))
 }

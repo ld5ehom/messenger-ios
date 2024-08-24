@@ -17,7 +17,7 @@ struct SettingView: View {
     // Environment property wrapper to dismiss the current view.
     @Environment(\.dismiss) var dismiss
     
-    @EnvironmentObject var appearanceController: AppearanceController
+    @EnvironmentObject var container: DIContainer
     @StateObject var viewModel: SettingViewModel
     
     var body: some View {
@@ -31,7 +31,7 @@ struct SettingView: View {
                                     // Test Setting View appearance
 //                                    viewModel.send(action: .changeAppearance(a))
 //                                    appearance = a.rawValue
-                                    appearanceController.changeAppearance(a)
+                                    container.appearanceController.changeAppearance(a)
                                     appearance = a.rawValue
                                 }
                             } label: {
@@ -55,7 +55,7 @@ struct SettingView: View {
         }
         // Test Setting View appearance
 //        .preferredColorScheme(viewModel.appearance.colorScheme)
-        .preferredColorScheme(appearanceController.appearance.colorScheme)
+        .preferredColorScheme(container.appearanceController.appearance.colorScheme)
     }
 }
 
