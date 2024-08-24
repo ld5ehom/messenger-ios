@@ -15,8 +15,6 @@ class HomeViewModel: ObservableObject {
         case load
         case requestContacts // contact service
         case presentView(HomeModalDestination)
-//        case presentMyProfileView
-//        case presentOtherProfileView(String) // Includes associated value for passing friend user ID
         case goToChat(User)
     }
 
@@ -35,14 +33,12 @@ class HomeViewModel: ObservableObject {
     var userId: String
     
     private var container: DIContainer
-    private var navigationRouter: NavigationRouter
     private var subscriptions = Set<AnyCancellable>()
     
     // UserService Firebase getUser data
     // Task 3: Added navigation functionality to link to the Search view.
-    init(container: DIContainer, navigationRouter: NavigationRouter ,userId: String) {
+    init(container: DIContainer, userId: String) {
         self.container = container
-        self.navigationRouter = navigationRouter
         self.userId = userId
     }
     
@@ -90,12 +86,6 @@ class HomeViewModel: ObservableObject {
                 }
                 .store(in: &subscriptions)
             
-//        case .presentMyProfileView:
-//            modalDestination = .myProfile
-            
-//        case let .presentOtherProfileView(userId):
-//            modalDestination = .otherProfile(userId)
-            
         case let .presentView(destination):
             modalDestination = destination
             
@@ -116,7 +106,7 @@ class HomeViewModel: ObservableObject {
                     }
                     
                     // Task 4: Adds navigation to the chat view with the necessary parameters
-                    self.navigationRouter.push(to: .chat(chatRoomId: chatRoom.chatRoomId,
+                    self.container.navigationRouter.push(to: .chat(chatRoomId: chatRoom.chatRoomId,
                                                           myUserId: self.userId,
                                                           otherUserId: otherUser.id))
                 }.store(in: &subscriptions)

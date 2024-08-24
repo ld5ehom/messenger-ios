@@ -12,7 +12,6 @@ import PhotosUI
  Task 4: Chat View UI
  */
 struct ChatView: View {
-    @EnvironmentObject var navigationRouter: NavigationRouter
     @StateObject var viewModel: ChatViewModel
     @FocusState private var isFocused: Bool
     
@@ -39,7 +38,7 @@ struct ChatView: View {
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarLeading) {
                 Button {
-                    navigationRouter.pop()
+                    viewModel.send(action: .pop)
                 } label: {
                     Image(systemName: "chevron.left") // System image for back button
                         .accessibilityLabel(Text("Back"))
@@ -155,7 +154,7 @@ struct ChatView: View {
 
 #Preview {
     NavigationStack {
-        ChatView(viewModel: .init(container: DIContainer(services: StubService()),
+        ChatView(viewModel: .init(container: .stub,
                                   chatRoomId: "chatRoom1_id",
                                   myUserId: "user1_id",
                                   otherUserId: "user2_id"))

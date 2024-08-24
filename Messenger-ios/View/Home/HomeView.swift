@@ -10,12 +10,11 @@ import SwiftUI
 // Task 2 Home view
 struct HomeView: View {
     @EnvironmentObject var container: DIContainer
-    @EnvironmentObject var navigationRouter: NavigationRouter // Task 3: OtherProfileView
     @StateObject var viewModel: HomeViewModel
     
     var body: some View {
         // Task 3: Using the navigation router to manage the navigation path in OtherProfileView
-        NavigationStack(path: $navigationRouter.destinations) {
+        NavigationStack(path: $container.navigationRouter.destinations) {
             contentView
             // modal destination
                 .fullScreenCover(item: $viewModel.modalDestination) {
@@ -185,26 +184,7 @@ struct HomeView: View {
     }
 }
 
-//#Preview {
-//    // Initialize the DIContainer and NavigationRouter instances
-//    let container = DIContainer(services: StubService())
-//    let navigationRouter = NavigationRouter()
-//    
-//    // Create the HomeView with the view model
-//    HomeView(viewModel: HomeViewModel(container: container, navigationRouter: navigationRouter, userId: "user1_id"))
-//        .environmentObject(container)
-//        .environmentObject(navigationRouter)
-//}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        // Initialize DIContainer and NavigationRouter instances
-        let container = DIContainer(services: StubService())
-        let navigationRouter = NavigationRouter()
-        
-        // Create the HomeView with the view model
-        HomeView(viewModel: HomeViewModel(container: container, navigationRouter: navigationRouter, userId: "user1_id"))
-            .environmentObject(container)
-            .environmentObject(navigationRouter)
-    }
+#Preview {
+    HomeView(viewModel: .init(container: .stub, userId: "user1_id"))
+        .environmentObject(DIContainer.stub)
 }

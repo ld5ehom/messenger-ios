@@ -12,7 +12,6 @@ Task 5: Search View UI
 */
 struct SearchView: View {
     @Environment(\.managedObjectContext) var objectContext
-    @EnvironmentObject var navigationRouter: NavigationRouter
     @StateObject var viewModel: SearchViewModel
     @AccessibilityFocusState var isSearchBarFocused: Bool
 
@@ -54,7 +53,7 @@ struct SearchView: View {
             
             // Back button
             Button {
-                navigationRouter.pop()
+                viewModel.send(action: .pop)
             } label: {
                 Label("Back", systemImage: "arrow.backward")
             }
@@ -89,5 +88,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView(viewModel: .init(container: DIContainer(services: StubService()), userId: "user1_id"))
+    SearchView(viewModel: .init(container: .stub, userId: "user1_id"))
 }

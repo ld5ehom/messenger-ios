@@ -10,11 +10,17 @@ import CoreData
 
 /**
  Task 5: Search Core Data controller
+ Task 7: DIContainer protocol
  */
 
-class SearchDataController: ObservableObject {
+// protocol for test
+protocol DataControllable {
+    var persistantContainer: NSPersistentContainer { get set }
+}
+
+class SearchDataController: DataControllable {
     
-    let persistantContainer = NSPersistentContainer(name: "Search")
+    var persistantContainer = NSPersistentContainer(name: "Search")
     
     init() {
         persistantContainer.loadPersistentStores { description, error in

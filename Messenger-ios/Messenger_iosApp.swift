@@ -20,11 +20,11 @@ struct Messenger_iosApp: App {
         WindowGroup {
             
             // Invoke AuthenticatedView
-            AuthenticatedView(authViewModel: .init(container: container),
-                              navigationRouter: .init(), // Task 3. OtherProfileView
-                              searchDataController: .init(),
-                              appearanceController: .init(appearanceValue)) // Task 6. SettingView 
+            AuthenticatedView(authViewModel: .init(container: container))
                 .environmentObject(container)
+                .onAppear {
+                    container.appearanceController.changeAppearance(AppearanceType(rawValue: appearanceValue))
+                }
         }
     }
 }

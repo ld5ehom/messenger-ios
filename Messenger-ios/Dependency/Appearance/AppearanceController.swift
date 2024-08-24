@@ -17,15 +17,18 @@ protocol AppearanceControllerable {
     func changeAppearance(_ willBeAppearance: AppearanceType?)
 }
 
-class AppearanceController: AppearanceControllerable, ObservableObject {
+class AppearanceController: AppearanceControllerable, ObservableObjectSettable {
     
-    @Published var appearance: AppearanceType
+    var objectWillChange: ObservableObjectPublisher?
     
-    init(_ appearanceValue: Int) {
-        self.appearance = AppearanceType(rawValue: appearanceValue) ?? .automatic
+    var appearance: AppearanceType = .automatic {
+        didSet {
+            objectWillChange?.send()
+        }
     }
     
     func changeAppearance(_ willBeAppearance: AppearanceType?) {
         appearance = willBeAppearance ?? .automatic
     }
+    
 }

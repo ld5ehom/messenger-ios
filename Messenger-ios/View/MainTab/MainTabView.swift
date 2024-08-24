@@ -11,7 +11,6 @@ import SwiftUI
 struct MainTabView: View {
     @EnvironmentObject var authViewModel: AuthenticationViewModel
     @EnvironmentObject var container: DIContainer
-    @EnvironmentObject var navigationRouter: NavigationRouter
     @State private var selectedTab: MainTabType = .home
     
     var body: some View {
@@ -22,7 +21,7 @@ struct MainTabView: View {
                     case .home:
                         // Injects the user ID
                         // Task 3: Using the navigation router to manage the navigation path in OtherProfileView
-                        HomeView(viewModel: .init(container: container, navigationRouter: navigationRouter , userId: authViewModel.userId ?? ""))
+                        HomeView(viewModel: .init(container: container,  userId: authViewModel.userId ?? ""))
                     case .chat:
                         ChatListView(viewModel: .init(container: container, userId: authViewModel.userId ?? ""))
                     case .phone:
@@ -52,30 +51,8 @@ struct MainTabView: View {
     }
 }
 
-//#Preview {
-//    // Initialize DIContainer and NavigationRouter instances
-//    let container = DIContainer(services: StubService())
-//    let navigationRouter = NavigationRouter()
-//    let authViewModel = AuthenticationViewModel(container: container)
-//
-//    // Create and return the MainTabView with the environment objects
-//    MainTabView()
-//        .environmentObject(container)
-//        .environmentObject(authViewModel)
-//        .environmentObject(navigationRouter)
-//}
-
-struct MainTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        // Initialize DIContainer, NavigationRouter, and AuthenticationViewModel instances
-        let container = DIContainer(services: StubService())
-        let navigationRouter = NavigationRouter()
-        let authViewModel = AuthenticationViewModel(container: container)
-
-        // Create and return the MainTabView with the environment objects
-        MainTabView()
-            .environmentObject(container)
-            .environmentObject(authViewModel)
-            .environmentObject(navigationRouter)
-    }
+#Preview {
+    MainTabView()
+        .environmentObject(DIContainer.stub)
+        .environmentObject(AuthenticationViewModel(container: .stub))
 }
