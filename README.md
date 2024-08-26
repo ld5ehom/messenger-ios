@@ -1,10 +1,11 @@
 # Messenger iOS App
 
 ## Project Overview
-- Developed a messenger app for iOS, implementing user authentication with Firebase, including secure login, registration, and logout functionalities.
-- Designed and built profile management features, including profile image updates using PhotosUI and real-time synchronization with Firebase Cloud Storage.
-- Created a chat interface with real-time message updates, message grouping by date, and customizable UI settings for light/dark mode.
+- Developed a messenger app for iOS, implementing user authentication with Firebase, including secure login and registration functionalities.
+- Designed and built profile management features, incorporating profile image updates using PhotosUI and real-time synchronization with Firebase Cloud Storage.
+- Created a chat interface with real-time message updates, message grouping by date, and customizable UI settings for light and dark modes.
 - Integrated Core Data to manage recent search terms and user preferences, ensuring a seamless and personalized user experience.
+- Refactored the DIContainer to centralize dependency management, abstracted Firebase communication in the service layer, and performed unit tests across all layers to ensure code accuracy and reliability.
 - Utilized: Swift, SwiftUI, UIKit, MVVM, CoreData, Firebase
 
 
@@ -89,10 +90,10 @@
 **Task 7. Comprehensive Testing and Debugging**
    - **Issues** : [task-7-test](https://github.com/ld5ehom/messenger-ios/tree/task-7-test)
    - **Details** : 
-     - **Unit Testing**: Conducted unit tests for the repository, service, and view model layers to verify their accuracy.  
-     - **DIContainer Refactoring**: Refactored NavigationRouter, SearchDataController, and AppearanceController into the DIContainer to centralize dependency management.
-     - **UserDBRepository Layer**: Created a protocol to abstract communication with Firebase and refactored the repository to conform to this protocol.
-     - **Google Sign-In Test Error**: Encountered errors with the Google Sign-In library during testing. The issue was resolved by removing the library.
+     - **Unit Testing (commit 603b591)**: Conducted unit tests for the repository, service, and view model layers to verify their accuracy.  
+     - **DIContainer Refactoring (commit 603b591)**: Refactored NavigationRouter, SearchDataController, and AppearanceController into the DIContainer to centralize dependency management.
+     - **UserDBRepository Layer (commit 603b591)**: Created a protocol to abstract communication with Firebase and refactored the repository to conform to this protocol.
+     - **Google Sign-In Test Error (commit 603b591)**: Encountered errors with the Google Sign-In library during testing. The issue was resolved by removing the library.
      
      
      
@@ -118,3 +119,7 @@
 ```
 git clone https://github.com/ld5ehom/messenger-ios.git
 ``` 
+**CocoaPods**:
+```
+pod install
+```
