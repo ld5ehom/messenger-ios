@@ -1,13 +1,13 @@
 Help.md
-.DS_Store
+.DS_Store/
 xcuserdata/
 build/
 .idea/
 
-.Pods/
+Pods/
 Podfile
 Podfile.lock
 
 Messenger-iosUITests
-.Messenger-ios.xcodeproj/
-.Messenger-ios.xcworkspace/
+Messenger-ios.xcodeproj/
+Messenger-ios.xcworkspace/
