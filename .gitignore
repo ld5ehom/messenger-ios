@@ -10,5 +10,3 @@ Podfile
 Podfile.lock
 
 Messenger-iosUITests
-Messenger-ios.xcodeproj/
-Messenger-ios.xcworkspace/
