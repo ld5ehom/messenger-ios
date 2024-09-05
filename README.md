@@ -26,7 +26,6 @@
      - **User Authentication with Firebase and Social Login Integration.** - [commit 5a76f48](https://github.com/ld5ehom/messenger-ios/commit/5a76f488f5ec02f678ae53bf61b156fb29ee11cf) : 
        - Updated the login UI view and implemented user authentication with secure login, registration, and logout functionality using Firebase, with support for Google and Apple sign-in.
 
-   
 **Task 2. Home View**
    - **Issues** : [task-2-home](https://github.com/ld5ehom/messenger-ios/tree/task-2-home)
    - **Estimated Duration**: 3 days
@@ -37,7 +36,6 @@
        - **Firebase Integration**: Implements login and logout functionalities with Firebase Realtime Database.  
        - **Contact Framework**: Integrates the Contact framework to enable friend-adding functionality.
 
-
 **Task 3. Profile View**
    - **Issues** : [task-3-profile](https://github.com/ld5ehom/messenger-ios/tree/task-3-profile)
    - **Estimated Duration** : 4 days
@@ -46,24 +44,19 @@
      - **MyProfileView and MyProfileDescView UI Enhancements.** - [commit  257b9ff](https://github.com/ld5ehom/messenger-ios/commit/257b9ff118043232b1e5d70b1672e5b4b628e029) : 
        - **MyProfileView UI**: Implemented the UI and functionalities for the My Profile section.
        - **MyProfileDescView UI**: Created a user profile status view with functionality to update and sync the profile status with Firebase DB.
-       
      - **MyProfile Image Update with PhotosUI.** - [commit  833f25d](https://github.com/ld5ehom/messenger-ios/commit/833f25d2425da2c092d0c803ea9acafeaae499a7) :  
        - Added functionality to update the profile image using a photo picker. Users can click on the profile image to select and update it.
-       
      - **Firebase Cloud Storage Integration and Profile Image Handling.** - [commit  0d27e8d](https://github.com/ld5ehom/messenger-ios/commit/0d27e8d63666b0f227b002f37297d22ae76175bb) :      
        - **Firebase Cloud Storage Integration**: Implemented functionality to upload the selected profile image to Firebase Cloud Storage.
        - **Upload Provider Implementation**: Integrated an upload provider to manage data uploads to Firebase Storage.
        - **Profile Image Display**: Implemented a feature to display the profile image using an asynchronous image view with a URL.
-       
      - **Image Caching and Asynchronous Image View Enhancement.** - [commit  51a7644](https://github.com/ld5ehom/messenger-ios/commit/51a7644783ffacee287e90d692b5e10153cc37ae) :       
        - **Image Cache Service**: Developed an image cache service to manage memory efficiently.
        - **URL Image View**: Created a view that replaces asynchronous images with cached images using the image cache service.
-     
      - **Profile and Navigation Management Enhancements.** - [commit  bc9b04d](https://github.com/ld5ehom/messenger-ios/commit/bc9b04d9940815725879d31912cac5ecd8f1f93b) : 
        - **Navigation Management**: Created an enum for common navigation paths across the app. Developed a navigation router to manage these paths, using NavigationLink and NavigationDestination to handle navigation between views.     
        - **Other Profile View**: Developed the user interface and functionalities for viewing other users' profiles. Added features for initiating chats with other users.
        - **Chat and Search UI**: Designed the basic structure for the chat user interface (UI) and search UI.
-         
      - **Chat List UI Implementation.** - [commit  0f17277](https://github.com/ld5ehom/messenger-ios/commit/0f17277e647ab8188caf51e654225c6763d4de7d) :  
        - Integrated the search button with the chat list UI into a unified view and reused the UI by utilizing navigation.
 
@@ -79,7 +72,6 @@
        - **Text Field**: Implemented a text field for message input, along with an input view that includes an image picker for attaching photos.
        - **Date Extension**: Added methods for converting Date objects to and from formatted strings, optimized for use in chat applications.
        - **Keyboard Toolbar**: A view modifier that adds a customizable toolbar above the keyboard, facilitating additional actions within the chat interface.
-     
      - **Real-Time Chat Updates.** - [commit  eec6591](https://github.com/ld5ehom/messenger-ios/commit/eec65913dba8e045a85ea98a3ff1afc0841bc86e) :  
        - Implemented real-time updates for chat messages using Firebase Realtime Database, ensuring that changes in the chat message storage path are immediately reflected in the view.
 
@@ -92,7 +84,6 @@
      - **Search Functionality and Recent Searches Management.** - [commit  c5dd76e](https://github.com/ld5ehom/messenger-ios/commit/c5dd76e23f0cc6e0fe078e23c51374d05db73d2b) :  
        - **SearchBar Integration**: Integrated UISearchBar(UIKit) into SwiftUI for search functionality
        - **Recent Searches Section**: Implemented a feature to store and manage recent search terms using Core-Data, allowing users to view their recent searches.
-     
      - **Core Data Integration for Recent Search Functionality.** - [commit  cd61615](https://github.com/ld5ehom/messenger-ios/commit/cd61615d775d6daa707f9b3ce2b976b675093f02) :  
        - Implemented recent search functionality using Core Data. This includes creating a new SearchResult entity, setting its properties (ID, name, date), and saving it to Core Data.
 
